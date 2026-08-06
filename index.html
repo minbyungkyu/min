@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>함피의 홈페이지 | 살며 사랑하며 여행하며~</title>
+    <title>살며 사랑하며 여행하며~ | 함피 민병규</title>
     <style>
         * {
             box-sizing: border-box;
@@ -11,34 +11,56 @@
             padding: 0;
         }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: #f8f9fa;
             color: #333;
             line-height: 1.6;
         }
+
+        /* 로고 헤더 영역 */
         header {
-            background-color: #ffffff;
-            padding: 40px 20px 20px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #ffffff;
+            padding: 60px 20px 45px;
             text-align: center;
-            border-bottom: 1px solid #e9ecef;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        header h1 {
-            font-size: 2rem;
-            color: #212529;
-            margin-bottom: 8px;
+
+        .logo-container {
+            max-width: 800px;
+            margin: 0 auto;
         }
-        header p {
-            color: #6c757d;
-            font-size: 1rem;
+
+        /* 로고 메인 타이틀 */
+        .logo-title {
+            font-size: 2.3rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
-        
-        /* 네비게이션 메뉴 스타일 */
+
+        /* 서브 태그라인 / 뱃지 */
+        .logo-badge {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* 내비게이션 카테고리 메뉴 */
         nav {
             background-color: #ffffff;
             border-bottom: 1px solid #e9ecef;
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
         }
         .menu-container {
             max-width: 900px;
@@ -48,12 +70,9 @@
             flex-wrap: wrap;
             list-style: none;
         }
-        .menu-container li {
-            margin: 0;
-        }
         .menu-container a {
             display: block;
-            padding: 15px 18px;
+            padding: 16px 20px;
             text-decoration: none;
             color: #495057;
             font-weight: 600;
@@ -61,8 +80,8 @@
             transition: all 0.2s ease;
         }
         .menu-container a:hover {
-            color: #03c75a; /* 네이버 포인트 컬러 */
-            background-color: #f1f3f5;
+            color: #03c75a;
+            background-color: #f8f9fa;
         }
 
         /* 메인 콘텐츠 영역 */
@@ -74,44 +93,53 @@
         }
         .intro-card {
             background-color: #ffffff;
-            padding: 40px 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 45px 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
             border: 1px solid #e9ecef;
         }
         .intro-card h2 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 15px;
-            color: #343a40;
+            color: #212529;
         }
         .intro-card p {
             color: #6c757d;
             margin-bottom: 25px;
+            font-size: 1.05rem;
         }
         .btn-main {
             display: inline-block;
-            padding: 12px 24px;
+            padding: 12px 28px;
             background-color: #03c75a;
             color: white;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 8px;
             font-weight: bold;
+            font-size: 1rem;
             transition: background-color 0.2s ease;
         }
         .btn-main:hover {
             background-color: #02b350;
         }
+
+        @media (max-width: 600px) {
+            .logo-title { font-size: 1.75rem; }
+            .menu-container a { padding: 12px 14px; font-size: 0.88rem; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- 헤더 영역 -->
+    <!-- 로고 헤더 영역 -->
     <header>
-        <h1>살며 사랑하며 여행하며~</h1>
-        <p>함피 민병규의 개인 홈페이지</p>
+        <div class="logo-container">
+            <h1 class="logo-title">살며 사랑하며 여행하며~</h1>
+            <div class="logo-badge">함피 민병규의 개인 공간</div>
+        </div>
     </header>
 
-    <!-- 블로그 카테고리 메뉴 영역 -->
+    <!-- 네이버 블로그 카테고리 메뉴 -->
     <nav>
         <ul class="menu-container">
             <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim" target="_blank">전체보기</a></li>
@@ -124,12 +152,12 @@
         </ul>
     </nav>
 
-    <!-- 메인 본문 영역 -->
+    <!-- 메인 본문 카드 -->
     <main>
         <div class="intro-card">
             <h2>반갑습니다!</h2>
             <p>상단 메뉴를 클릭하시면 해당 카테고리의 네이버 블로그 글 목록으로 이동합니다.</p>
-            <a href="https://blog.naver.com/hampinim" target="_blank" class="btn-main">네이버 블로그 메인 바로가기</a>
+            <a href="https://blog.naver.com/hampinim" target="_blank" class="btn-main">네이버 블로그 메인 방문하기</a>
         </div>
     </main>
 
