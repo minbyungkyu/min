@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>살며 사랑하며 여행하며~ | 함피 민병규</title>
+  <title>살며 사랑하며 여행하며~ | 함피 민병규 (흰색 로고 적용)</title>
   <style>
     :root {
       --primary-color: #03c75a;
@@ -26,7 +26,7 @@
       background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
       padding: 40px 20px;
       text-align: center;
-      color: white;
+      color: white; /* 텍스트는 원래 흰색 */
     }
 
     .brand-container {
@@ -43,6 +43,9 @@
       max-width: 220px;
       height: auto;
       object-fit: contain;
+
+      /* [수정] 로고 이미지를 흰색으로 변경 - filter 사용 */
+      filter: invert(100%) brightness(200%); 
     }
 
     .site-title {
@@ -60,6 +63,9 @@
       height: 38px;
       width: auto;
       vertical-align: middle;
+
+      /* [수정] 부로고 이미지를 흰색으로 변경 - filter 사용 */
+      filter: invert(100%) brightness(200%);
     }
 
     /* 네비게이션 메인 바 */
@@ -179,7 +185,7 @@
       font-weight: bold;
     }
 
-    /* 푸터 영역 (도장/부로고 재활용 가능) */
+    /* 푸터 영역 */
     footer {
       text-align: center;
       padding: 40px 20px;
@@ -191,6 +197,9 @@
       height: 30px;
       opacity: 0.8;
       margin-top: 10px;
+      
+      /* [추가] 푸터의 도장 이미지도 흰색으로 변경 원할 시 */
+      filter: invert(100%) brightness(200%);
     }
 
     @media (max-width: 600px) {
@@ -215,6 +224,7 @@
     </div>
   </header>
 
+  <!-- ... 나머지 body 콘텐츠는 동일 ... -->
   <!-- 네비게이션 메뉴 -->
   <nav>
     <ul class="menu-container">
