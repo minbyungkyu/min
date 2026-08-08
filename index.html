@@ -21,49 +21,52 @@
       line-height: 1.6;
     }
 
-    /* 헤더 & 로고 영역 (배경 흰색으로 변경) */
+    /* 헤더 영역 (흰색 배경 & 좌측 logo1 정렬) */
     header {
-      background: #ffffff; /* 파란색 그라데이션 대신 흰색 배경 적용 */
-      padding: 40px 20px;
-      text-align: center;
-      color: var(--text-main); /* 글자색을 어둡게 변경 */
-      border-bottom: 1px solid #e9ecef; /* 본문과 구분되는 옅은 경계선 */
+      background: #ffffff;
+      padding: 20px 30px;
+      border-bottom: 1px solid #e9ecef;
     }
 
-    .brand-container {
-      max-width: 800px;
+    .header-container {
+      max-width: 1000px;
       margin: 0 auto;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 15px;
+      justify-content: space-between;
+      gap: 20px;
     }
 
-    /* 메인 로고 (khlogo.png) */
+    /* 좌측 정렬된 logo1 영역 */
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+
     .main-logo {
-      max-width: 220px;
-      height: auto;
+      height: 45px; /* 필요에 따라 높이 조절 가능 */
+      width: auto;
       object-fit: contain;
-      /* 배경이 흰색이므로 기존의 반전(invert) 필터 제거 */
+    }
+
+    /* 중앙/우측 메인 타이틀 & 부로고(dojang11) 영역 */
+    .header-center {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
     .site-title {
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: 800;
       letter-spacing: -0.5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      color: #212529;
+      color: var(--text-main);
     }
 
-    /* 부로고 / 도장 (dojang11.png) */
     .sub-logo {
-      height: 38px;
+      height: 32px;
       width: auto;
       vertical-align: middle;
-      /* 배경이 흰색이므로 기존의 반전(invert) 필터 제거 */
     }
 
     /* 네비게이션 메인 바 */
@@ -73,11 +76,11 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
     }
 
     .menu-container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
       display: flex;
       justify-content: center;
@@ -97,7 +100,7 @@
 
     .menu-container a:hover {
       color: var(--primary-color);
-      background-color: #f1f3f5;
+      background-color: #f8f9fa;
     }
 
     /* 메인 콘텐츠 및 카테고리 Grid */
@@ -114,7 +117,6 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.04);
       border: 1px solid #e9ecef;
       text-align: center;
-      position: relative;
       margin-bottom: 30px;
     }
 
@@ -197,25 +199,38 @@
       margin-top: 10px;
     }
 
+    /* 반응형 스타일 (모바일 환경) */
     @media (max-width: 600px) {
-      .site-title { font-size: 1.5rem; flex-direction: column; }
-      .menu-container a { padding: 12px 14px; font-size: 0.88rem; }
+      .header-container {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+      .site-title {
+        font-size: 1.3rem;
+      }
+      .menu-container a {
+        padding: 12px 10px;
+        font-size: 0.85rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- 로고 및 헤더 영역 (흰색 배경) -->
+  <!-- 새로운 상단 헤더 영역 -->
   <header>
-    <div class="brand-container">
-      <!-- 메인 로고 khlogo.png -->
-      <img src="khlogo.png" alt="KH 로고" class="main-logo">
-      
-      <!-- 서브 로고 dojang11.png 와 메인 타이틀 -->
-      <h1 class="site-title">
-        살며 사랑하며 여행하며~
+    <div class="header-container">
+      <!-- 좌측 정렬: logo1.png -->
+      <div class="header-left">
+        <img src="logo1.png" alt="메인 로고" class="main-logo">
+      </div>
+
+      <!-- 우측/중앙: 타이틀 및 부로고 dojang11.png -->
+      <div class="header-center">
+        <h1 class="site-title">살며 사랑하며 여행하며~</h1>
         <img src="dojang11.png" alt="함피 도장" class="sub-logo">
-      </h1>
+      </div>
     </div>
   </header>
 
