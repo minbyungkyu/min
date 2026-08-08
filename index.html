@@ -24,29 +24,30 @@
     /* 헤더 영역 */
     header {
       background: #ffffff;
-      padding: 30px 20px;
+      padding: 25px 20px;
       border-bottom: 1px solid #e9ecef;
     }
 
+    /* 본문(main) 너비인 800px에 똑같이 맞춰 좌측 정렬되도록 설정 */
     .header-container {
-      max-width: 800px; /* 본문 max-width와 맞춰 중앙 균형 유지 */
+      max-width: 800px;
       margin: 0 auto;
       display: flex;
       align-items: center;
-      justify-content: center; /* 전체 요소를 중앙 부근으로 자연스럽게 정렬 */
-      gap: 20px;
+      justify-content: flex-start; /* 본문 왼쪽선에 맞춰 시작 */
+      gap: 15px;
     }
 
-    /* 메인 로고 (logo1.png) - 크기 확대 및 위치 조정 */
+    /* 메인 로고 (logo1.png) */
     .main-logo {
-      height: 80px; /* 기존 45px에서 크게 확대 */
+      height: 70px;
       width: auto;
       object-fit: contain;
     }
 
     /* 부로고 (dojang11.png) */
     .sub-logo {
-      height: 40px;
+      height: 35px;
       width: auto;
       vertical-align: middle;
     }
@@ -62,17 +63,18 @@
     }
 
     .menu-container {
-      max-width: 900px;
+      max-width: 800px;
       margin: 0 auto;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start; /* 메뉴도 본문 좌측선에 맞춰 정렬 */
       flex-wrap: wrap;
       list-style: none;
     }
 
     .menu-container a {
       display: block;
-      padding: 16px 20px;
+      padding: 16px 20px 16px 0; /* 좌측 여백을 비워 로고와 라인을 맞춤 */
+      margin-right: 20px;
       text-decoration: none;
       color: #495057;
       font-weight: 600;
@@ -82,7 +84,6 @@
 
     .menu-container a:hover {
       color: var(--primary-color);
-      background-color: #f8f9fa;
     }
 
     /* 메인 콘텐츠 영역 */
@@ -184,10 +185,11 @@
     /* 모바일 반응형 */
     @media (max-width: 600px) {
       .main-logo {
-        height: 60px;
+        height: 50px;
       }
       .menu-container a {
-        padding: 12px 10px;
+        padding: 10px;
+        margin-right: 0;
         font-size: 0.85rem;
       }
     }
@@ -195,12 +197,10 @@
 </head>
 <body>
 
-  <!-- 헤더 영역 -->
+  <!-- 헤더 영역 (본문 왼쪽 라인에 정렬) -->
   <header>
     <div class="header-container">
-      <!-- 확대된 메인 로고 logo1.png -->
       <img src="logo1.png" alt="메인 로고" class="main-logo">
-      <!-- 부로고 dojang11.png -->
       <img src="dojang11.png" alt="함피 도장" class="sub-logo">
     </div>
   </header>
