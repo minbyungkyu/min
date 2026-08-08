@@ -21,50 +21,32 @@
       line-height: 1.6;
     }
 
-    /* 헤더 영역 (흰색 배경 & 좌측 logo1 정렬) */
+    /* 헤더 영역 */
     header {
       background: #ffffff;
-      padding: 20px 30px;
+      padding: 30px 20px;
       border-bottom: 1px solid #e9ecef;
     }
 
     .header-container {
-      max-width: 1000px;
+      max-width: 800px; /* 본문 max-width와 맞춰 중앙 균형 유지 */
       margin: 0 auto;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center; /* 전체 요소를 중앙 부근으로 자연스럽게 정렬 */
       gap: 20px;
     }
 
-    /* 좌측 정렬된 logo1 영역 */
-    .header-left {
-      display: flex;
-      align-items: center;
-    }
-
+    /* 메인 로고 (logo1.png) - 크기 확대 및 위치 조정 */
     .main-logo {
-      height: 45px; /* 필요에 따라 높이 조절 가능 */
+      height: 80px; /* 기존 45px에서 크게 확대 */
       width: auto;
       object-fit: contain;
     }
 
-    /* 중앙/우측 메인 타이틀 & 부로고(dojang11) 영역 */
-    .header-center {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .site-title {
-      font-size: 1.5rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      color: var(--text-main);
-    }
-
+    /* 부로고 (dojang11.png) */
     .sub-logo {
-      height: 32px;
+      height: 40px;
       width: auto;
       vertical-align: middle;
     }
@@ -80,7 +62,7 @@
     }
 
     .menu-container {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
       display: flex;
       justify-content: center;
@@ -103,7 +85,7 @@
       background-color: #f8f9fa;
     }
 
-    /* 메인 콘텐츠 및 카테고리 Grid */
+    /* 메인 콘텐츠 영역 */
     main {
       max-width: 800px;
       margin: 40px auto;
@@ -146,7 +128,7 @@
       background-color: #02b350;
     }
 
-    /* 카테고리 모던 카드 그리드 */
+    /* 카테고리 카드 그리드 */
     .category-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -199,15 +181,10 @@
       margin-top: 10px;
     }
 
-    /* 반응형 스타일 (모바일 환경) */
+    /* 모바일 반응형 */
     @media (max-width: 600px) {
-      .header-container {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-      }
-      .site-title {
-        font-size: 1.3rem;
+      .main-logo {
+        height: 60px;
       }
       .menu-container a {
         padding: 12px 10px;
@@ -218,19 +195,13 @@
 </head>
 <body>
 
-  <!-- 새로운 상단 헤더 영역 -->
+  <!-- 헤더 영역 -->
   <header>
     <div class="header-container">
-      <!-- 좌측 정렬: logo1.png -->
-      <div class="header-left">
-        <img src="logo1.png" alt="메인 로고" class="main-logo">
-      </div>
-
-      <!-- 우측/중앙: 타이틀 및 부로고 dojang11.png -->
-      <div class="header-center">
-        <h1 class="site-title">살며 사랑하며 여행하며~</h1>
-        <img src="dojang11.png" alt="함피 도장" class="sub-logo">
-      </div>
+      <!-- 확대된 메인 로고 logo1.png -->
+      <img src="logo1.png" alt="메인 로고" class="main-logo">
+      <!-- 부로고 dojang11.png -->
+      <img src="dojang11.png" alt="함피 도장" class="sub-logo">
     </div>
   </header>
 
