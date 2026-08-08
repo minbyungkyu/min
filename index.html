@@ -1,165 +1,274 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>살며 사랑하며 여행하며~ | 함피 민병규</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>살며 사랑하며 여행하며~ | 함피 민병규</title>
+  <style>
+    :root {
+      --primary-color: #03c75a;
+      --bg-color: #f8f9fa;
+      --card-bg: #ffffff;
+      --text-main: #212529;
+      --text-sub: #6c757d;
+    }
 
-        /* 로고 헤더 영역 */
-        header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: #ffffff;
-            padding: 60px 20px 45px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
 
-        .logo-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    /* 헤더 & 로고 영역 */
+    header {
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      padding: 40px 20px;
+      text-align: center;
+      color: white;
+    }
 
-        /* 로고 메인 타이틀 */
-        .logo-title {
-            font-size: 2.3rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            margin-bottom: 12px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
+    .brand-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
 
-        /* 서브 태그라인 / 뱃지 */
-        .logo-badge {
-            display: inline-block;
-            background-color: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
+    /* 메인 로고 (khlogo.png) */
+    .main-logo {
+      max-width: 220px;
+      height: auto;
+      object-fit: contain;
+    }
 
-        /* 내비게이션 카테고리 메뉴 */
-        nav {
-            background-color: #ffffff;
-            border-bottom: 1px solid #e9ecef;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-        }
-        .menu-container {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            list-style: none;
-        }
-        .menu-container a {
-            display: block;
-            padding: 16px 20px;
-            text-decoration: none;
-            color: #495057;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-        }
-        .menu-container a:hover {
-            color: #03c75a;
-            background-color: #f8f9fa;
-        }
+    .site-title {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
 
-        /* 메인 콘텐츠 영역 */
-        main {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-        .intro-card {
-            background-color: #ffffff;
-            padding: 45px 25px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            border: 1px solid #e9ecef;
-        }
-        .intro-card h2 {
-            font-size: 1.6rem;
-            margin-bottom: 15px;
-            color: #212529;
-        }
-        .intro-card p {
-            color: #6c757d;
-            margin-bottom: 25px;
-            font-size: 1.05rem;
-        }
-        .btn-main {
-            display: inline-block;
-            padding: 12px 28px;
-            background-color: #03c75a;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: background-color 0.2s ease;
-        }
-        .btn-main:hover {
-            background-color: #02b350;
-        }
+    /* 부로고 / 도장 (dojang11.png) */
+    .sub-logo {
+      height: 38px;
+      width: auto;
+      vertical-align: middle;
+    }
 
-        @media (max-width: 600px) {
-            .logo-title { font-size: 1.75rem; }
-            .menu-container a { padding: 12px 14px; font-size: 0.88rem; }
-        }
-    </style>
+    /* 네비게이션 메인 바 */
+    nav {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e9ecef;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .menu-container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+
+    .menu-container a {
+      display: block;
+      padding: 16px 20px;
+      text-decoration: none;
+      color: #495057;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+
+    .menu-container a:hover {
+      color: var(--primary-color);
+      background-color: #f1f3f5;
+    }
+
+    /* 메인 콘텐츠 및 카테고리 Grid */
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .intro-card {
+      background: var(--card-bg);
+      padding: 35px 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+      border: 1px solid #e9ecef;
+      text-align: center;
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .intro-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .intro-card p {
+      color: var(--text-sub);
+      margin-bottom: 20px;
+    }
+
+    /* 블로그 바로가기 버튼 */
+    .btn-main {
+      display: inline-block;
+      padding: 12px 28px;
+      background-color: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-main:hover {
+      background-color: #02b350;
+    }
+
+    /* 카테고리 모던 카드 그리드 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+
+    .category-card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+      border: 1px solid #e9ecef;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .category-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+      border-color: var(--primary-color);
+    }
+
+    .category-card h3 {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .category-card span {
+      font-size: 0.85rem;
+      color: var(--primary-color);
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    /* 푸터 영역 (도장/부로고 재활용 가능) */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-sub);
+      font-size: 0.88rem;
+    }
+
+    footer .footer-stamp {
+      height: 30px;
+      opacity: 0.8;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .site-title { font-size: 1.5rem; flex-direction: column; }
+      .menu-container a { padding: 12px 14px; font-size: 0.88rem; }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- 로고 헤더 영역 -->
-    <header>
-        <div class="logo-container">
-            <h1 class="logo-title">살며 사랑하며 여행하며~</h1>
-            <div class="logo-badge">함피 민병규의 개인 공간</div>
-        </div>
-    </header>
+  <!-- 로고 및 헤더 영역 -->
+  <header>
+    <div class="brand-container">
+      <!-- 메인 로고 khlogo.png -->
+      <img src="khlogo.png" alt="KH 로고" class="main-logo">
+      
+      <!-- 서브 로고 dojang11.png 와 메인 타이틀 -->
+      <h1 class="site-title">
+        살며 사랑하며 여행하며~
+        <img src="dojang11.png" alt="함피 도장" class="sub-logo">
+      </h1>
+    </div>
+  </header>
 
-    <!-- 네이버 블로그 카테고리 메뉴 -->
-    <nav>
-        <ul class="menu-container">
-            <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim" target="_blank">전체보기</a></li>
-            <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=46" target="_blank">22~현재 다낭</a></li>
-            <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=44" target="_blank">2022 태국북부</a></li>
-            <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=19" target="_blank">여행단상</a></li>
-            <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=7" target="_blank">홍대성산망원</a></li>
-            <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=16" target="_blank">주절주절</a></li>
-            <li><a href="https://blog.naver.com/guestbook/GuestBookList.naver?blogId=hampinim" target="_blank">안부게시판</a></li>
-        </ul>
-    </nav>
+  <!-- 네비게이션 메뉴 -->
+  <nav>
+    <ul class="menu-container">
+      <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim" target="_blank">전체보기</a></li>
+      <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=46" target="_blank">22~현재 다낭</a></li>
+      <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=44" target="_blank">2022 태국북부</a></li>
+      <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=19" target="_blank">여행단상</a></li>
+      <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=7" target="_blank">홍대성산망원</a></li>
+      <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=16" target="_blank">주절주절</a></li>
+      <li><a href="https://blog.naver.com/guestbook/GuestBookList.naver?blogId=hampinim" target="_blank">안부게시판</a></li>
+    </ul>
+  </nav>
 
-    <!-- 메인 본문 카드 -->
-    <main>
-        <div class="intro-card">
-            <h2>반갑습니다!</h2>
-            <p>상단 메뉴를 클릭하시면 해당 카테고리의 네이버 블로그 글 목록으로 이동합니다. </p>
-            <a href="https://blog.naver.com/hampinim" target="_blank" class="btn-main">네이버 블로그 메인 방문하기</a>
-        </div>
-    </main>
+  <!-- 메인 콘텐츠 영역 -->
+  <main>
+    <div class="intro-card">
+      <h2>반갑습니다! 함피 민병규입니다.</h2>
+      <p>원하시는 카테고리를 선택하거나 아래 네이버 블로그 메인 버튼을 눌러 이동해보세요.</p>
+      <a href="https://blog.naver.com/hampinim" target="_blank" class="btn-main">네이버 블로그 메인 방문하기</a>
+    </div>
+
+    <!-- 카테고리 카드 그리드 (모던 레이아웃) -->
+    <div class="category-grid">
+      <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=46" target="_blank" class="category-card">
+        <h3>22~현재 다낭</h3>
+        <span>바로가기 &rarr;</span>
+      </a>
+      <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=44" target="_blank" class="category-card">
+        <h3>2022 태국북부</h3>
+        <span>바로가기 &rarr;</span>
+      </a>
+      <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=19" target="_blank" class="category-card">
+        <h3>여행단상</h3>
+        <span>바로가기 &rarr;</span>
+      </a>
+      <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=7" target="_blank" class="category-card">
+        <h3>홍대성산망원</h3>
+        <span>바로가기 &rarr;</span>
+      </a>
+      <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=16" target="_blank" class="category-card">
+        <h3>주절주절</h3>
+        <span>바로가기 &rarr;</span>
+      </a>
+      <a href="https://blog.naver.com/guestbook/GuestBookList.naver?blogId=hampinim" target="_blank" class="category-card">
+        <h3>안부게시판</h3>
+        <span>바로가기 &rarr;</span>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 함피 민병규. All rights reserved.</p>
+    <img src="dojang11.png" alt="도장 시그니처" class="footer-stamp">
+  </footer>
 
 </body>
 </html>
