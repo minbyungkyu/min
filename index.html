@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>살며 사랑하며 여행하며~ | 함피 민병규 (흰색 로고 적용)</title>
+  <title>살며 사랑하며 여행하며~ | 함피 민병규</title>
   <style>
     :root {
       --primary-color: #03c75a;
@@ -21,12 +21,13 @@
       line-height: 1.6;
     }
 
-    /* 헤더 & 로고 영역 */
+    /* 헤더 & 로고 영역 (배경 흰색으로 변경) */
     header {
-      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      background: #ffffff; /* 파란색 그라데이션 대신 흰색 배경 적용 */
       padding: 40px 20px;
       text-align: center;
-      color: white; /* 텍스트는 원래 흰색 */
+      color: var(--text-main); /* 글자색을 어둡게 변경 */
+      border-bottom: 1px solid #e9ecef; /* 본문과 구분되는 옅은 경계선 */
     }
 
     .brand-container {
@@ -43,9 +44,7 @@
       max-width: 220px;
       height: auto;
       object-fit: contain;
-
-      /* [수정] 로고 이미지를 흰색으로 변경 - filter 사용 */
-      filter: invert(100%) brightness(200%); 
+      /* 배경이 흰색이므로 기존의 반전(invert) 필터 제거 */
     }
 
     .site-title {
@@ -56,6 +55,7 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
+      color: #212529;
     }
 
     /* 부로고 / 도장 (dojang11.png) */
@@ -63,9 +63,7 @@
       height: 38px;
       width: auto;
       vertical-align: middle;
-
-      /* [수정] 부로고 이미지를 흰색으로 변경 - filter 사용 */
-      filter: invert(100%) brightness(200%);
+      /* 배경이 흰색이므로 기존의 반전(invert) 필터 제거 */
     }
 
     /* 네비게이션 메인 바 */
@@ -197,9 +195,6 @@
       height: 30px;
       opacity: 0.8;
       margin-top: 10px;
-      
-      /* [추가] 푸터의 도장 이미지도 흰색으로 변경 원할 시 */
-      filter: invert(100%) brightness(200%);
     }
 
     @media (max-width: 600px) {
@@ -210,7 +205,7 @@
 </head>
 <body>
 
-  <!-- 로고 및 헤더 영역 -->
+  <!-- 로고 및 헤더 영역 (흰색 배경) -->
   <header>
     <div class="brand-container">
       <!-- 메인 로고 khlogo.png -->
@@ -224,7 +219,6 @@
     </div>
   </header>
 
-  <!-- ... 나머지 body 콘텐츠는 동일 ... -->
   <!-- 네비게이션 메뉴 -->
   <nav>
     <ul class="menu-container">
@@ -246,7 +240,7 @@
       <a href="https://blog.naver.com/hampinim" target="_blank" class="btn-main">네이버 블로그 메인 방문하기</a>
     </div>
 
-    <!-- 카테고리 카드 그리드 (모던 레이아웃) -->
+    <!-- 카테고리 카드 그리드 -->
     <div class="category-grid">
       <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=46" target="_blank" class="category-card">
         <h3>22~현재 다낭</h3>
