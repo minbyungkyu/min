@@ -11,9 +11,17 @@
       --card-bg: #ffffff;
       --text-main: #212529;
       --text-sub: #6c757d;
+      --nav-bg: #2c3e50;
+      --nav-hover: #34495e;
+      --accent-color: #3498db;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: var(--bg-color);
@@ -24,241 +32,176 @@
     /* 헤더 영역 */
     header {
       background: #ffffff;
-      padding: 25px 20px;
+      padding: 20px;
       border-bottom: 1px solid #e9ecef;
     }
 
-    /* 본문(main) 너비인 800px에 똑같이 맞춰 좌측 정렬되도록 설정 */
     .header-container {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 0 auto;
       display: flex;
       align-items: center;
-      justify-content: flex-start; /* 본문 왼쪽선에 맞춰 시작 */
+      justify-content: flex-start;
       gap: 15px;
     }
 
     /* 메인 로고 (logo1.png) */
     .main-logo {
-      height: 100px;
+      height: 80px;
       width: auto;
       object-fit: contain;
     }
 
-    /* 부로고 (dojang11.png) */
+    /* 부 로고 (khlogo.png) */
     .sub-logo {
       height: 45px;
       width: auto;
-      vertical-align: middle;
+      object-fit: contain;
     }
 
     /* 네비게이션 메인 바 */
     nav {
-      background-color: #ffffff;
-      border-bottom: 1px solid #e9ecef;
+      background-color: var(--nav-bg);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
-    .menu-container {
-      max-width: 800px;
+    .nav-container {
+      max-width: 1000px;
       margin: 0 auto;
+    }
+
+    /* 메인 메뉴 (1차) */
+    .main-menu {
       display: flex;
-      justify-content: flex-start; /* 메뉴도 본문 좌측선에 맞춰 정렬 */
-      flex-wrap: wrap;
       list-style: none;
+      flex-wrap: wrap;
     }
 
-    .menu-container a {
+    .main-menu > li {
+      position: relative;
+    }
+
+    .main-menu > li > a {
       display: block;
-      padding: 16px 20px 16px 0; /* 좌측 여백을 비워 로고와 라인을 맞춤 */
-      margin-right: 20px;
+      padding: 15px 18px;
+      color: #ffffff;
       text-decoration: none;
-      color: #495057;
       font-weight: 600;
-      font-size: 0.95rem;
-      transition: all 0.2s ease;
+      font-size: 15px;
+      transition: background 0.3s, color 0.3s;
     }
 
-    .menu-container a:hover {
-      color: var(--primary-color);
+    .main-menu > li:hover > a {
+      background-color: var(--nav-hover);
+      color: var(--accent-color);
     }
 
-    /* 메인 콘텐츠 영역 */
-    main {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .intro-card {
-      background: var(--card-bg);
-      padding: 35px 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+    /* 드롭다운 서브 메뉴 (2차) */
+    .dropdown-menu {
+      display: none; /* 기본 숨김 */
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #ffffff;
+      min-width: 250px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      list-style: none;
+      z-index: 1000;
+      max-height: 420px; /* 목록이 길어 스크롤 적용 */
+      overflow-y: auto;
+      border-radius: 0 0 6px 6px;
       border: 1px solid #e9ecef;
-      text-align: center;
-      margin-bottom: 30px;
     }
 
-    .intro-card h2 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
-
-    .intro-card p {
-      color: var(--text-sub);
-      margin-bottom: 20px;
-    }
-
-    /* 블로그 바로가기 버튼 */
-    .btn-main {
-      display: inline-block;
-      padding: 12px 28px;
-      background-color: var(--primary-color);
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: background-color 0.2s ease;
-    }
-
-    .btn-main:hover {
-      background-color: #02b350;
-    }
-
-    /* 카테고리 카드 그리드 */
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
-    }
-
-    .category-card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      text-decoration: none;
-      color: var(--text-main);
-      border: 1px solid #e9ecef;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-      transition: transform 0.2s, box-shadow 0.2s;
+    .dropdown-menu li a {
       display: flex;
-      flex-direction: column;
       justify-content: space-between;
+      align-items: center;
+      padding: 10px 16px;
+      color: #333333;
+      text-decoration: none;
+      font-size: 14px;
+      border-bottom: 1px solid #f0f0f0;
+      transition: background 0.2s, color 0.2s;
     }
 
-    .category-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-      border-color: var(--primary-color);
+    .dropdown-menu li:last-child a {
+      border-bottom: none;
     }
 
-    .category-card h3 {
-      font-size: 1.1rem;
-      color: #333;
+    .dropdown-menu li a:hover {
+      background-color: #f1f5f9;
+      color: var(--accent-color);
+      font-weight: 500;
     }
 
-    .category-card span {
-      font-size: 0.85rem;
-      color: var(--primary-color);
-      margin-top: 10px;
-      font-weight: bold;
-    }
-
-    /* 푸터 영역 */
-    footer {
-      text-align: center;
-      padding: 40px 20px;
+    /* 글 카운트 (숫자) 스타일 */
+    .count {
       color: var(--text-sub);
-      font-size: 0.88rem;
+      font-size: 12px;
+      font-weight: normal;
     }
 
-    footer .footer-stamp {
-      height: 30px;
-      opacity: 0.8;
-      margin-top: 10px;
-    }
-
-    /* 모바일 반응형 */
-    @media (max-width: 600px) {
-      .main-logo {
-        height: 50px;
-      }
-      .menu-container a {
-        padding: 10px;
-        margin-right: 0;
-        font-size: 0.85rem;
-      }
+    /* 마우스 호버 시 서브메뉴 표시 */
+    .has-dropdown:hover .dropdown-menu {
+      display: block;
     }
   </style>
 </head>
 <body>
 
-  <!-- 헤더 영역 (본문 왼쪽 라인에 정렬) -->
+  <!-- 상단 로고 헤더 -->
   <header>
     <div class="header-container">
-      <img src="logo1.png" alt="메인 로고" class="main-logo">
-      <img src="dojang11.png" alt="함피 도장" class="sub-logo">
+      <a href="/"><img src="logo1.png" alt="메인 로고" class="main-logo"></a>
+      <a href="/"><img src="khlogo.png" alt="부 로고" class="sub-logo"></a>
     </div>
   </header>
 
   <!-- 네비게이션 메뉴 -->
   <nav>
-    <ul class="menu-container">
-      <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim" target="_blank">전체보기</a></li>
-      <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=46" target="_blank">22~현재 다낭</a></li>
-      <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=44" target="_blank">2022 태국북부</a></li>
-      <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=19" target="_blank">여행단상</a></li>
-      <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=7" target="_blank">홍대성산망원</a></li>
-      <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=16" target="_blank">주절주절</a></li>
-      <li><a href="https://blog.naver.com/guestbook/GuestBookList.naver?blogId=hampinim" target="_blank">안부게시판</a></li>
-    </ul>
+    <div class="nav-container">
+      <ul class="main-menu">
+        <!-- 지구여행 (드롭다운) -->
+        <li class="has-dropdown">
+          <a href="#">지구여행 ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">22~현재 다낭 <span class="count">(65)</span></a></li>
+            <li><a href="#">2023 방콕 <span class="count">(8)</span></a></li>
+            <li><a href="#">2022 태국북부 <span class="count">(45)</span></a></li>
+            <li><a href="#">2019 베트남 <span class="count">(5)</span></a></li>
+            <li><a href="#">2018 후쿠오카</a></li>
+            <li><a href="#">2018 코타키나발루</a></li>
+            <li><a href="#">2017 베트남,태국 <span class="count">(5)</span></a></li>
+            <li><a href="#">2017 카자흐,키르기스스탄 <span class="count">(3)</span></a></li>
+            <li><a href="#">2017 일본 홋카이도</a></li>
+            <li><a href="#">2016 태국 <span class="count">(5)</span></a></li>
+            <li><a href="#">2016 타이페이 <span class="count">(2)</span></a></li>
+            <li><a href="#">2016 포르투갈 <span class="count">(12)</span></a></li>
+            <li><a href="#">2015 캄보디아,태국,라오스 <span class="count">(44)</span></a></li>
+            <li><a href="#">2009 미서부 캠핑여행 <span class="count">(25)</span></a></li>
+            <li><a href="#">2008.일본.간사이정보 <span class="count">(25)</span></a></li>
+            <li><a href="#">2004 중국 윈난성 <span class="count">(4)</span></a></li>
+            <li><a href="#">2001 태국.미얀마 <span class="count">(6)</span></a></li>
+            <li><a href="#">1998 아시아 육로횡단 <span class="count">(17)</span></a></li>
+          </ul>
+        </li>
+
+        <!-- 주 메뉴들 -->
+        <li><a href="#">팔도유람</a></li>
+        <li><a href="#">여행단상</a></li>
+        <li><a href="#">주절주절</a></li>
+        <li><a href="#">읽고보고</a></li>
+        <li><a href="#">홍대성산망원</a></li>
+        <li><a href="#">톡톡이야기방</a></li>
+        <li><a href="#">GrapeGardenHouse</a></li>
+        <li><a href="#">인도엿보기(2008)</a></li>
+      </ul>
+    </div>
   </nav>
-
-  <!-- 메인 콘텐츠 영역 -->
-  <main>
-    <div class="intro-card">
-      <h2>반갑습니다! 함피 민병규입니다.</h2>
-      <p>원하시는 카테고리를 선택하거나 아래 네이버 블로그 메인 버튼을 눌러 이동해보세요.</p>
-      <a href="https://blog.naver.com/hampinim" target="_blank" class="btn-main">네이버 블로그 메인 방문하기</a>
-    </div>
-
-    <!-- 카테고리 카드 그리드 -->
-    <div class="category-grid">
-      <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=46" target="_blank" class="category-card">
-        <h3>22~현재 다낭</h3>
-        <span>바로가기 &rarr;</span>
-      </a>
-      <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=44" target="_blank" class="category-card">
-        <h3>2022 태국북부</h3>
-        <span>바로가기 &rarr;</span>
-      </a>
-      <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=19" target="_blank" class="category-card">
-        <h3>여행단상</h3>
-        <span>바로가기 &rarr;</span>
-      </a>
-      <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=7" target="_blank" class="category-card">
-        <h3>홍대성산망원</h3>
-        <span>바로가기 &rarr;</span>
-      </a>
-      <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&categoryNo=16" target="_blank" class="category-card">
-        <h3>주절주절</h3>
-        <span>바로가기 &rarr;</span>
-      </a>
-      <a href="https://blog.naver.com/guestbook/GuestBookList.naver?blogId=hampinim" target="_blank" class="category-card">
-        <h3>안부게시판</h3>
-        <span>바로가기 &rarr;</span>
-      </a>
-    </div>
-  </main>
-
-  <footer>
-    <p>&copy; 함피 민병규. All rights reserved.</p>
-    <img src="dojang11.png" alt="도장 시그니처" class="footer-stamp">
-  </footer>
 
 </body>
 </html>
