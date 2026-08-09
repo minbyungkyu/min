@@ -147,40 +147,40 @@
       display: block;
     }
 
-    /* 3. 메인 대문(Hero) 영역 - hero11.jpg 적용 */
+    /* 3. 메인 대문(Hero) 영역 - 사진이 잘리지 않도록 조정 */
     .hero-section {
       position: relative;
-      height: 520px;
-      /* 업로드하신 hero11.jpg 파일 적용 및 가독성을 위한 어두운 오버레이 레이어 추가 */
-      background: linear-gradient(rgba(15, 23, 42, 0.35), rgba(15, 23, 42, 0.55)), 
-                  url('hero11.jpg') center/cover no-repeat;
+      min-height: 550px;
+      /* 상단이 잘리지 않도록 center top 위치 및 background-size 조정 */
+      background: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.65)), 
+                  url('hero11.jpg') center top / cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #ffffff;
       text-align: center;
-      padding: 0 20px;
+      padding: 60px 20px;
     }
 
     .hero-content {
-      max-width: 800px;
+      max-width: 900px;
     }
 
     .hero-title {
-      font-size: 44px;
+      font-size: 48px;
       font-weight: 700;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
       letter-spacing: -1px;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+      text-shadow: 0 2px 12px rgba(0,0,0,0.6);
     }
 
     .hero-subtitle {
-      font-size: 19px;
+      font-size: 17px;
       font-weight: 300;
       opacity: 0.95;
-      line-height: 1.6;
+      line-height: 1.8;
       word-break: keep-all;
-      text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+      text-shadow: 0 1px 8px rgba(0,0,0,0.5);
     }
 
     /* 4. 메인 컨텐츠 카드가 들어가는 공간 */
@@ -334,11 +334,13 @@
     </div>
   </nav>
 
-  <!-- hero11.jpg 배경이 들어가는 대문 섹션 -->
+  <!-- 요청하신 Brent Travel 소개글로 변경된 대문(Hero) 영역 -->
   <section class="hero-section">
     <div class="hero-content">
-      <h1 class="hero-title">살며 사랑하며 여행하며~</h1>
-      <p class="hero-subtitle">함피 민병규의 지구 곳곳 여행 이야기와 생생한 기록들</p>
+      <h1 class="hero-title">Asia</h1>
+      <p class="hero-subtitle">
+        As the largest continent on Earth, Asia offers virtually any travel experience imaginable. A continent so full of intrigue, adventure, solace and spirituality that it has fixated and confounded travelers for centuries. From sublime coastlines to snow-capped mountains, the majestic Mekong River to wildlife infested jungle, Asian landscapes hold an immediacy and vibrancy that captivates and enchants. Immense expanses of desert flow down from massive mountains, which in turn give way to seemingly endless forests. In a land where tigers still roam free (don't worry, they don't roam near any tourist attractions) nature continues to be the driving force in many peoples' lives.
+      </p>
     </div>
   </section>
 
