@@ -1,1 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>살며 사랑하며 여행하며~ | 모바일</title>
+  <style>
+    :root {
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-sub: #64748b;
+      --nav-bg: #1e293b;
+      --accent-color: #38bdf8;
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    /* 1. 모바일 상단 헤더 */
+    header {
+      background: #ffffff;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .main-logo {
+      height: 32px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .stamp-logo {
+      height: 30px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* 2. 심플 모바일 네비게이션 (4개 메뉴) */
+    nav {
+      background-color: var(--nav-bg);
+      width: 100%;
+    }
+
+    .mobile-menu {
+      display: flex;
+      list-style: none;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .mobile-menu li {
+      flex: 1;
+      text-align: center;
+    }
+
+    .mobile-menu li a {
+      display: block;
+      padding: 14px 0;
+      color: #f1f5f9;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .mobile-menu li a:active,
+    .mobile-menu li a:hover {
+      color: var(--accent-color);
+      background-color: #334155;
+    }
+
+    /* 3. 모바일 대문(Hero) 영역 */
+    .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45)), url('hero1122.jpg') center/cover no-repeat;
+      color: #ffffff;
+      padding: 40px 20px;
+      text-align: left;
+    }
+
+    .hero-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+
+    .hero-subtitle {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      opacity: 0.95;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+    }
+
+    /* 4. 모바일 메인 콘텐츠 (1열 메인 카드) */
+    main {
+      padding: 24px 16px;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text-main);
+    }
+
+    .card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .card-item {
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-img-wrapper {
+      height: 160px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .card-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 16px;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      line-height: 1.4;
+    }
+
+    /* 푸터 */
+    footer {
+      background-color: #0f172a;
+      color: #94a3b8;
+      padding: 20px 16px;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 상단 헤더 -->
+  <header>
+    <a href="https://blog.naver.com/hampinim" target="_blank">
+      <img src="logo1.png" alt="메인 로고" class="main-logo">
+    </a>
+    <a href="https://blog.naver.com/hampinim" target="_blank">
+      <img src="dojang11.png" alt="도장 로고" class="stamp-logo">
+    </a>
+  </header>
+
+  <!-- 4개 지정 메뉴 모바일 네비게이션 -->
+  <nav>
+    <ul class="mobile-menu">
+      <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22&parentCategoryNo=22" target="_blank">지구여행</a></li>
+      <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=21" target="_blank">팔도유람</a></li>
+      <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=19" target="_blank">여행단상</a></li>
+      <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=16" target="_blank">주절주절</a></li>
+    </ul>
+  </nav>
+
+  <!-- 모바일 대문 -->
+  <section class="hero-section">
+    <h1 class="hero-title">여행은 언제나 거기 있다</h1>
+    <p class="hero-subtitle">
+      일상의 소음이 잠시 멀어지고,<br>
+      낯선 거리의 공기가 스며드는 순간<br>
+      길 위에서 만나는 모든 풍경은 기록이 됩니다.
+    </p>
+  </section>
+
+  <!-- 대표 콘텐츠 -->
+  <main>
+    <h2 class="section-title">🌏 주요 카테고리</h2>
+    <div class="card-list">
+      <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=46" target="_blank" class="card-item">
+        <div class="card-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=600&q=80" alt="다낭">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">지구여행 (다낭 이야기)</h3>
+          <p class="card-desc">아름다운 바다와 삶의 여유가 넘치는 다낭 라이프 기록</p>
+        </div>
+      </a>
+
+      <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=21" target="_blank" class="card-item">
+        <div class="card-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=600&q=80" alt="팔도유람">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">팔도유람</h3>
+          <p class="card-desc">발길 따라 만나는 국내 곳곳의 아름다운 풍경 소식</p>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© KoreaHostel All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
