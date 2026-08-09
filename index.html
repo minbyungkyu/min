@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>살며 사랑하며 여행하며~ | 함피 민병규</title>
+  <!-- Brent Travel 필체와 유사한 Google Cursive Font 불러오기 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary-color: #03c75a;
@@ -147,35 +151,43 @@
       display: block;
     }
 
-    /* 3. 메인 대문(Hero) 영역 - 사진이 잘리지 않도록 조정 */
+    /* 3. 메인 대문(Hero) 영역 - 좌측 정렬 & 75%(3/4) 폭 적용 */
     .hero-section {
       position: relative;
       min-height: 550px;
-      /* 상단이 잘리지 않도록 center top 위치 및 background-size 조정 */
       background: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.65)), 
                   url('hero11.jpg') center top / cover no-repeat;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start; /* 컨텐츠를 전체 영역의 좌측에 배치 */
       color: #ffffff;
-      text-align: center;
-      padding: 60px 20px;
+      padding: 60px 40px;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
     }
 
     .hero-content {
-      max-width: 900px;
+      width: 75%; /* 글 상자 폭을 3/4(75%)로 조절 */
+      text-align: left; /* 좌측 정렬 */
     }
 
+    /* 필체 폰트 적용 (Caveat) */
     .hero-title {
-      font-size: 48px;
+      font-family: 'Caveat', cursive, sans-serif;
+      font-size: 72px; /* 필체감을 잘 살리기 위해 크기를 크게 설정 */
       font-weight: 700;
-      margin-bottom: 20px;
-      letter-spacing: -1px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
       text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+      line-height: 1.1;
     }
 
     .hero-subtitle {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 300;
       opacity: 0.95;
       line-height: 1.8;
@@ -283,6 +295,15 @@
     .footer-info p {
       font-size: 14px;
     }
+
+    @media (max-width: 768px) {
+      .hero-content {
+        width: 100%; /* 모바일 환경에서는 여백 확보를 위해 100% 사용 */
+      }
+      .hero-title {
+        font-size: 54px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -334,13 +355,15 @@
     </div>
   </nav>
 
-  <!-- 요청하신 Brent Travel 소개글로 변경된 대문(Hero) 영역 -->
+  <!-- 대문 영역: 75% 너비 & 좌측 정렬 및 필체 폰트 적용 -->
   <section class="hero-section">
-    <div class="hero-content">
-      <h1 class="hero-title">Asia</h1>
-      <p class="hero-subtitle">
-        As the largest continent on Earth, Asia offers virtually any travel experience imaginable. A continent so full of intrigue, adventure, solace and spirituality that it has fixated and confounded travelers for centuries. From sublime coastlines to snow-capped mountains, the majestic Mekong River to wildlife infested jungle, Asian landscapes hold an immediacy and vibrancy that captivates and enchants. Immense expanses of desert flow down from massive mountains, which in turn give way to seemingly endless forests. In a land where tigers still roam free (don't worry, they don't roam near any tourist attractions) nature continues to be the driving force in many peoples' lives.
-      </p>
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">Asia</h1>
+        <p class="hero-subtitle">
+          As the largest continent on Earth, Asia offers virtually any travel experience imaginable. A continent so full of intrigue, adventure, solace and spirituality that it has fixated and confounded travelers for centuries. From sublime coastlines to snow-capped mountains, the majestic Mekong River to wildlife infested jungle, Asian landscapes hold an immediacy and vibrancy that captivates and enchants. Immense expanses of desert flow down from massive mountains, which in turn give way to seemingly endless forests. In a land where tigers still roam free (don't worry, they don't roam near any tourist attractions) nature continues to be the driving force in many peoples' lives.
+        </p>
+      </div>
     </div>
   </section>
 
