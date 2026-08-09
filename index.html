@@ -36,32 +36,87 @@
       min-height: 100vh;
     }
 
-    /* 1. 상단 최상단 로고 헤더 */
-    header {
-      background: #ffffff;
-      padding: 15px 24px;
-      border-bottom: 1px solid #e2e8f0;
-    }
+/* --------------------------------------------------
+   1. 헤더 기본 스타일 (PC용)
+-------------------------------------------------- */
+header {
+  width: 100%;
+  background-color: var(--header-bg);
+  padding: 15px 0;
+}
 
-    .header-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+.header-container {
+  width: 100%;
+  padding-left: 10%; /* 문구 포함 전체 레이아웃 시작 위치를 좌측 10%로 설정 */
+  padding-right: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
 
-    .main-logo {
-      height: 65px;
-      width: auto;
-      object-fit: contain;
-    }
+/* 좌측 그룹 (메인 로고 + 문구) */
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* 메인 로고와 문구 사이 여백 */
+}
 
-    .stamp-logo {
-      height: 50px;
-      width: auto;
-      object-fit: contain;
-    }
+/* PC 메인 로고 */
+.main-logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* PC 오른쪽 도장 로고 */
+.stamp-logo {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+}
+
+
+/* --------------------------------------------------
+   2. 모바일 반응형 (화면 폭 768px 이하)
+-------------------------------------------------- */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 0;
+  }
+
+  /* 모바일에서는 여백을 줄여 로고 잘림 방지 */
+  .header-container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  .logo-group {
+    gap: 8px;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  /* 모바일 화면에 맞춰 로고 크기 확실히 축소 */
+  .main-logo {
+    height: 30px !important;
+    max-width: 130px;
+    object-fit: contain;
+  }
+
+  .stamp-logo {
+    height: 30px !important;
+    object-fit: contain;
+  }
+
+  /* "여행은 언제나 거기 있다" 글자 크기 축소 */
+  .logo-group span,
+  .header-container span {
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+}
+    
 
     /* 2. 네비게이션 메인 바 */
     nav {
