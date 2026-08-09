@@ -176,15 +176,14 @@
     }
 
     /* 필체 폰트 적용 (Caveat) */
-    .hero-title {
-      font-family: 'Caveat', cursive, sans-serif;
-      font-size: 72px; /* 필체감을 잘 살리기 위해 크기를 크게 설정 */
-      font-weight: 700;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.6);
-      line-height: 1.1;
-    }
+  .hero-title {
+  font-family: inherit;      /* 본문 상위/기본 폰트(Pretendard) 상속 */
+  font-size: 16px;           /* hero-subtitle과 동일한 글자 크기 */
+  font-weight: 300;          /* hero-subtitle과 동일한 두께 (기본 굵기 원하시면 400 또는 normal) */
+  line-height: 1.8;          /* 본문과 동일한 줄간격 */
+  margin-bottom: 10px;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.5); /* 본문과 동일한 그림자 효과 */
+}
 
     .hero-subtitle {
       font-size: 16px;
@@ -359,12 +358,12 @@
   <section class="hero-section">
     <div class="hero-container">
       <div class="hero-content">
-        <h1 class="hero-title">여행은 언제나 거기 있습니다</h1>
+        <strong>여행은 언제나 거기 있습니다</strong><br><br>
         <p class="hero-subtitle">
           일상의 소음이 잠시 멀어지고,<br>
           낯선 거리의 공기가 폐 속으로 스며드는 순간<br>
           그때 비로소 살아있음을 온전히 느끼게 됩니다.<br>
-          처음 밟는 땅, 처음 듣는 언어, 처음 맡는 냄새. 여행은 그 모든 '처음'을 선물합니다.
+          처음 밟는 땅, 처음 듣는 언어, 처음 맡는 냄새. 여행은 그 모든 '처음'을 선물합니다.<br>
 
 어디론가 떠난다는 건 단순히 장소를 바꾸는 일이 아닙니다.<br>
           매일 반복되던 나를 잠시 내려놓고, 더 넓은 세상 속에서 나를 다시 들여다보는 일입니다.<br>
