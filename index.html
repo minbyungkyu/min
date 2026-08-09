@@ -174,21 +174,22 @@
 }
 /* 모바일 등 좁은 화면에서는 글이 너무 좁아지지 않도록 100%로 복원 */
 @media (max-width: 768px) {
+  height: 40px; /* 기존 65px에서 40px로 축소 */
+    max-width: 70%; /* 화면 폭을 넘지 않도록 제한 */
+    object-fit: contain;
+  }
+
+  /* 우측 도장 로고 크기도 비율에 맞춰 축소 */
+  .stamp-logo {
+    height: 35px; /* 기존 50px에서 35px로 축소 */
+    object-fit: contain;
+  }
+
+  /* (기존 모바일 스타일 요소들...) */
   .hero-content {
-    margin-left: 0;
     width: 100%;
   }
 }
-    .hero-container {
-      max-width: 1200px;
-      width: 100%;
-      margin: 0 auto;
-    }
-
-    .hero-content {
-      width: 75%; /* 글 상자 폭을 3/4(75%)로 조절 */
-      text-align: left; /* 좌측 정렬 */
-    }
 
     /* 필체 폰트 적용 (Caveat) */
   .hero-title {
