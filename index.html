@@ -16,317 +16,301 @@
   }
 </script>
   
-  <style>
-    :root {
-      --primary-color: #03c75a;
-      --bg-color: #f4f6f8;
-      --card-bg: #ffffff;
-      --text-main: #1e293b;
-      --text-sub: #64748b;
-      --nav-bg: #1e293b;
-      --nav-hover: #334155;
-      --accent-color: #38bdf8;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      line-height: 1.6;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    /* 1. 상단 최상단 로고 헤더 */
-    header {
-      background: #ffffff;
-      padding: 15px 24px;
-      border-bottom: 1px solid #e2e8f0;
-    }
-
-    .header-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .main-logo {
-      height: 65px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    .stamp-logo {
-      height: 50px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    /* 2. 네비게이션 메인 바 */
-    nav {
-      background-color: var(--nav-bg);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .main-menu {
-      display: flex;
-      list-style: none;
-      flex-wrap: wrap;
-    }
-
-    .main-menu > li {
-      position: relative;
-    }
-
-    .main-menu > li > a {
-      display: block;
-      padding: 16px 20px;
-      color: #f8fafc;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 15px;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .main-menu > li:hover > a {
-      background-color: var(--nav-hover);
-      color: var(--accent-color);
-    }
-
-    /* 드롭다운 서브 메뉴 */
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #ffffff;
-      min-width: 260px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-      list-style: none;
-      z-index: 1000;
-      max-height: 450px;
-      overflow-y: auto;
-      border-radius: 0 0 8px 8px;
-      border: 1px solid #e2e8f0;
-    }
-
-    .dropdown-menu li a {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 18px;
-      color: #334155;
-      text-decoration: none;
-      font-size: 14px;
-      border-bottom: 1px solid #f1f5f9;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .dropdown-menu li:last-child a {
-      border-bottom: none;
-    }
-
-    .dropdown-menu li a:hover {
-      background-color: #f8fafc;
-      color: var(--accent-color);
-      font-weight: 600;
-    }
-
-    .count {
-      color: var(--text-sub);
-      font-size: 12px;
-      font-weight: normal;
-    }
-
-    .has-dropdown:hover .dropdown-menu {
-      display: block;
-    }
-
-    /* 3. 메인 대문(Hero) 영역 - 좌측 정렬 & 75%(3/4) 폭 적용 */
-    .hero-section {
-  position: relative;
-  min-height: 550px;
-  /* 오버레이 투명도를 대폭 낮추고 bright 필터 적용 (밝기 105%, 채도 110%) */
-  background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25)), 
-              url('hero1122.jpg') center 10% / cover no-repeat;
-  filter: brightness(1.05) contrast(1.05); /* 전체적인 화사함 강조 */
-  display: flex;
-  align-items: center;
-  color: #ffffff;
-  padding: 60px 40px;
-}
-
-/* 글자 아래에 어두운 그림자 효과를 두어 하얀 글씨가 잘 보이게 처리 */
-.hero-content {
-  margin-left: 5%;
-  width: calc(100% * (4 / 6));
-  text-align: left;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8), 0 0 4px rgba(0, 0, 0, 0.6);
-}
-/* 모바일 등 좁은 화면에서는 글이 너무 좁아지지 않도록 100%로 복원 */
-@media (max-width: 768px) {
-  .hero-content {
-    margin-left: 0;
-    width: 100%;
+<style>
+  :root {
+    --primary-color: #03c75a;
+    --bg-color: #f4f6f8;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-sub: #64748b;
+    --nav-bg: #1e293b;
+    --nav-hover: #334155;
+    --accent-color: #38bdf8;
   }
-}
-    .hero-container {
-      max-width: 1200px;
-      width: 100%;
-      margin: 0 auto;
-    }
 
-    .hero-content {
-      width: 75%; /* 글 상자 폭을 3/4(75%)로 조절 */
-      text-align: left; /* 좌측 정렬 */
-    }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-    /* 필체 폰트 적용 (Caveat) */
+  body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* 1. 상단 로고 헤더 */
+  header {
+    background: #ffffff;
+    padding: 15px 24px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .main-logo {
+    height: 65px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .stamp-logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  /* 2. 네비게이션 메인 바 */
+  nav {
+    background-color: var(--nav-bg);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .main-menu {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+
+  .main-menu > li {
+    position: relative;
+  }
+
+  .main-menu > li > a {
+    display: block;
+    padding: 16px 20px;
+    color: #f8fafc;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .main-menu > li:hover > a {
+    background-color: var(--nav-hover);
+    color: var(--accent-color);
+  }
+
+  /* 드롭다운 서브 메뉴 */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 260px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    list-style: none;
+    z-index: 1000;
+    max-height: 450px;
+    overflow-y: auto;
+    border-radius: 0 0 8px 8px;
+    border: 1px solid #e2e8f0;
+  }
+
+  .dropdown-menu li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 18px;
+    color: #334155;
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 1px solid #f1f5f9;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .dropdown-menu li:last-child a {
+    border-bottom: none;
+  }
+
+  .dropdown-menu li a:hover {
+    background-color: #f8fafc;
+    color: var(--accent-color);
+    font-weight: 600;
+  }
+
+  .count {
+    color: var(--text-sub);
+    font-size: 12px;
+    font-weight: normal;
+  }
+
+  .has-dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  /* 3. 메인 대문(Hero) 영역 */
+  .hero-section {
+    position: relative;
+    min-height: 550px;
+    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25)), url('hero1122.jpg') center 10% / cover no-repeat;
+    filter: brightness(1.05) contrast(1.05);
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    padding: 60px 20px;
+  }
+
+  .hero-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-content {
+    width: 75%;
+    text-align: left;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8), 0 0 4px rgba(0, 0, 0, 0.6);
+  }
+
   .hero-title {
-  font-family: inherit;      /* 본문 상위/기본 폰트(Pretendard) 상속 */
-  font-size: 16px;           /* hero-subtitle과 동일한 글자 크기 */
-  font-weight: 300;          /* hero-subtitle과 동일한 두께 (기본 굵기 원하시면 400 또는 normal) */
-  line-height: 1.8;          /* 본문과 동일한 줄간격 */
-  margin-bottom: 10px;
-  text-shadow: 0 1px 8px rgba(0,0,0,0.5); /* 본문과 동일한 그림자 효과 */
-}
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+  }
 
-    .hero-subtitle {
-      font-size: 16px;
-      font-weight: 300;
-      opacity: 0.95;
-      line-height: 1.8;
-      word-break: keep-all;
-      text-shadow: 0 1px 8px rgba(0,0,0,0.5);
-    }
+  .hero-subtitle {
+    font-size: 16px;
+    font-weight: 300;
+    opacity: 0.95;
+    line-height: 1.8;
+    word-break: keep-all;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+  }
 
-    /* 4. 메인 컨텐츠 카드가 들어가는 공간 */
-    main {
-      flex: 1;
-      max-width: 1200px;
+  /* 4. 메인 컨텐츠 영역 */
+  main {
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 50px auto;
+    padding: 0 20px;
+  }
+
+  .section-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+  }
+
+  .destination-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .destination-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+  }
+
+  .card-img-wrapper {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+
+  .destination-card:hover .card-img-wrapper img {
+    transform: scale(1.08);
+  }
+
+  .card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+
+  .card-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-main);
+  }
+
+  .card-desc {
+    font-size: 14px;
+    color: var(--text-sub);
+    line-height: 1.5;
+  }
+
+  /* 5. 푸터 */
+  footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    padding: 35px 20px;
+    margin-top: auto;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-info p {
+    font-size: 14px;
+  }
+
+  /* 6. 모바일 반응형 (최하단 정렬) */
+  @media (max-width: 768px) {
+    .hero-content {
       width: 100%;
-      margin: 50px auto;
-      padding: 0 20px;
     }
-
-    .section-title {
-      font-size: 26px;
-      font-weight: 700;
-      margin-bottom: 24px;
-      color: var(--text-main);
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .hero-title {
+      font-size: 1.1rem;
     }
-
-    /* 카드 그리드 레이아웃 */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 25px;
-    }
-
-    .destination-card {
-      background: var(--card-bg);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      transition: transform 0.3s, box-shadow 0.3s;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .destination-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.12);
-    }
-
-    .card-img-wrapper {
-      height: 200px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .card-img-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s;
-    }
-
-    .destination-card:hover .card-img-wrapper img {
-      transform: scale(1.08);
-    }
-
-    .card-body {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      flex-grow: 1;
-    }
-
-    .card-title {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: var(--text-main);
-    }
-
-    .card-desc {
-      font-size: 14px;
-      color: var(--text-sub);
-      line-height: 1.5;
-    }
-
-    /* 5. 하단 푸터 */
-    footer {
-      background-color: #0f172a;
-      color: #94a3b8;
-      padding: 35px 20px;
-      margin-top: auto;
-    }
-
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .footer-info p {
-      font-size: 14px;
-    }
-
-    @media (max-width: 768px) {
-      .hero-content {
-        width: 100%; /* 모바일 환경에서는 여백 확보를 위해 100% 사용 */
-      }
-      .hero-title {
-        font-size: 54px;
-      }
-    }
-  </style>
+  }
+</style>
+  
 </head>
 <body>
 
