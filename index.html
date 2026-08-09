@@ -27,34 +27,34 @@
       background-color: var(--bg-color);
       color: var(--text-main);
       line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
-    /* 헤더 영역 */
+    /* 상단 헤더 영역 */
     header {
       background: #ffffff;
-      padding: 20px;
+      padding: 15px 20px;
       border-bottom: 1px solid #e9ecef;
     }
 
     .header-container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      gap: 15px;
+      justify-content: space-between; /* 왼쪽 메인로고, 오른쪽 부로고 */
     }
 
-    /* 메인 로고 (logo1.png) */
     .main-logo {
-      height: 80px;
+      height: 70px;
       width: auto;
       object-fit: contain;
     }
 
-    /* 부 로고 (khlogo.png) */
-    .sub-logo {
-      height: 45px;
+    .stamp-logo {
+      height: 55px;
       width: auto;
       object-fit: contain;
     }
@@ -69,7 +69,7 @@
     }
 
     .nav-container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
@@ -101,7 +101,7 @@
 
     /* 드롭다운 서브 메뉴 (2차) */
     .dropdown-menu {
-      display: none; /* 기본 숨김 */
+      display: none;
       position: absolute;
       top: 100%;
       left: 0;
@@ -110,7 +110,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       list-style: none;
       z-index: 1000;
-      max-height: 420px; /* 목록이 길어 스크롤 적용 */
+      max-height: 420px;
       overflow-y: auto;
       border-radius: 0 0 6px 6px;
       border: 1px solid #e9ecef;
@@ -138,26 +138,54 @@
       font-weight: 500;
     }
 
-    /* 글 카운트 (숫자) 스타일 */
     .count {
       color: var(--text-sub);
       font-size: 12px;
       font-weight: normal;
     }
 
-    /* 마우스 호버 시 서브메뉴 표시 */
     .has-dropdown:hover .dropdown-menu {
       display: block;
+    }
+
+    main {
+      flex: 1;
+      max-width: 1100px;
+      width: 100%;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    /* 하단 푸터 영역 */
+    footer {
+      background-color: #343a40;
+      color: #adb5bd;
+      padding: 25px 20px;
+      margin-top: auto;
+    }
+
+    .footer-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-info p {
+      font-size: 14px;
+      line-height: 1.5;
     }
   </style>
 </head>
 <body>
 
-  <!-- 상단 로고 헤더 -->
+  <!-- 상단 헤더 -->
   <header>
     <div class="header-container">
-      <a href="/"><img src="logo1.png" alt="메인 로고" class="main-logo"></a>
-      <a href="/"><img src="khlogo.png" alt="부 로고" class="sub-logo"></a>
+      <!-- 메인 로고 클릭 시 블로그 메인으로 이동 -->
+      <a href="https://blog.naver.com/내아이디" target="_blank"><img src="logo1.png" alt="메인 로고" class="main-logo"></a>
+      <a href="https://blog.naver.com/내아이디" target="_blank"><img src="dojang11.png" alt="도장 로고" class="stamp-logo"></a>
     </div>
   </header>
 
@@ -169,39 +197,54 @@
         <li class="has-dropdown">
           <a href="#">지구여행 ▾</a>
           <ul class="dropdown-menu">
-            <li><a href="#">22~현재 다낭 <span class="count">(65)</span></a></li>
-            <li><a href="#">2023 방콕 <span class="count">(8)</span></a></li>
-            <li><a href="#">2022 태국북부 <span class="count">(45)</span></a></li>
-            <li><a href="#">2019 베트남 <span class="count">(5)</span></a></li>
-            <li><a href="#">2018 후쿠오카</a></li>
-            <li><a href="#">2018 코타키나발루</a></li>
-            <li><a href="#">2017 베트남,태국 <span class="count">(5)</span></a></li>
-            <li><a href="#">2017 카자흐,키르기스스탄 <span class="count">(3)</span></a></li>
-            <li><a href="#">2017 일본 홋카이도</a></li>
-            <li><a href="#">2016 태국 <span class="count">(5)</span></a></li>
-            <li><a href="#">2016 타이페이 <span class="count">(2)</span></a></li>
-            <li><a href="#">2016 포르투갈 <span class="count">(12)</span></a></li>
-            <li><a href="#">2015 캄보디아,태국,라오스 <span class="count">(44)</span></a></li>
-            <li><a href="#">2009 미서부 캠핑여행 <span class="count">(25)</span></a></li>
-            <li><a href="#">2008.일본.간사이정보 <span class="count">(25)</span></a></li>
-            <li><a href="#">2004 중국 윈난성 <span class="count">(4)</span></a></li>
-            <li><a href="#">2001 태국.미얀마 <span class="count">(6)</span></a></li>
-            <li><a href="#">1998 아시아 육로횡단 <span class="count">(17)</span></a></li>
+            <!-- target="_blank"를 넣으면 새 창/새 탭에서 네이버 블로그 해당 카테고리가 열립니다 -->
+            <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호1" target="_blank">22~현재 다낭 <span class="count">(65)</span></a></li>
+            <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호2" target="_blank">2023 방콕 <span class="count">(8)</span></a></li>
+            <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호3" target="_blank">2022 태국북부 <span class="count">(45)</span></a></li>
+            <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호4" target="_blank">2019 베트남 <span class="count">(5)</span></a></li>
+            <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호5" target="_blank">2018 후쿠오카</a></li>
+            <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호6" target="_blank">2018 코타키나발루</a></li>
+            <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호7" target="_blank">2017 베트남,태국 <span class="count">(5)</span></a></li>
+            <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호8" target="_blank">2017 카자흐,키르기스스탄 <span class="count">(3)</span></a></li>
+            <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호9" target="_blank">2017 일본 홋카이도</a></li>
+            <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호10" target="_blank">2016 태국 <span class="count">(5)</span></a></li>
+            <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호11" target="_blank">2016 타이페이 <span class="count">(2)</span></a></li>
+            <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호12" target="_blank">2016 포르투갈 <span class="count">(12)</span></a></li>
+            <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호13" target="_blank">2015 캄보디아,태국,라오스 <span class="count">(44)</span></a></li>
+            <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호14" target="_blank">2009 미서부 캠핑여행 <span class="count">(25)</span></a></li>
+            <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호15" target="_blank">2008.일본.간사이정보 <span class="count">(25)</span></a></li>
+            <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호16" target="_blank">2004 중국 윈난성 <span class="count">(4)</span></a></li>
+            <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호17" target="_blank">2001 태국.미얀마 <span class="count">(6)</span></a></li>
+            <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호18" target="_blank">1998 아시아 육로횡단 <span class="count">(17)</span></a></li>
           </ul>
         </li>
 
         <!-- 주 메뉴들 -->
-        <li><a href="#">팔도유람</a></li>
-        <li><a href="#">여행단상</a></li>
-        <li><a href="#">주절주절</a></li>
-        <li><a href="#">읽고보고</a></li>
-        <li><a href="#">홍대성산망원</a></li>
-        <li><a href="#">톡톡이야기방</a></li>
-        <li><a href="#">GrapeGardenHouse</a></li>
-        <li><a href="#">인도엿보기(2008)</a></li>
+        <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호19" target="_blank">팔도유람</a></li>
+        <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호20" target="_blank">여행단상</a></li>
+        <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호21" target="_blank">주절주절</a></li>
+        <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호22" target="_blank">읽고보고</a></li>
+        <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호23" target="_blank">홍대성산망원</a></li>
+        <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호24" target="_blank">톡톡이야기방</a></li>
+        <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호25" target="_blank">GrapeGardenHouse</a></li>
+        <li><a href="https://blog.naver.com/내아이디?Redirect=Log&categoryNo=카테고리번호26" target="_blank">인도엿보기(2008)</a></li>
       </ul>
     </div>
   </nav>
+
+  <!-- 본문 컨텐츠 영역 -->
+  <main>
+  </main>
+
+  <!-- 하단 푸터 -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-info">
+        <p>© 살며 사랑하며 여행하며~ All rights reserved.</p>
+      </div>
+      <a href="https://blog.naver.com/내아이디" target="_blank"><img src="dojang11.png" alt="도장 로고" class="stamp-logo"></a>
+    </div>
+  </footer>
 
 </body>
 </html>
