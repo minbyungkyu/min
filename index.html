@@ -147,12 +147,13 @@
       display: block;
     }
 
-    /* 3. 브렌트 트래블 스타일 히어로 대문 섹션 */
+    /* 3. 메인 대문(Hero) 영역 - hero11.jpg 적용 */
     .hero-section {
       position: relative;
-      height: 480px;
-      background: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.6)), 
-                  url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      height: 520px;
+      /* 업로드하신 hero11.jpg 파일 적용 및 가독성을 위한 어두운 오버레이 레이어 추가 */
+      background: linear-gradient(rgba(15, 23, 42, 0.35), rgba(15, 23, 42, 0.55)), 
+                  url('hero11.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -166,19 +167,20 @@
     }
 
     .hero-title {
-      font-size: 42px;
+      font-size: 44px;
       font-weight: 700;
       margin-bottom: 16px;
       letter-spacing: -1px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
     }
 
     .hero-subtitle {
-      font-size: 18px;
+      font-size: 19px;
       font-weight: 300;
       opacity: 0.95;
       line-height: 1.6;
       word-break: keep-all;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.3);
     }
 
     /* 4. 메인 컨텐츠 카드가 들어가는 공간 */
@@ -293,11 +295,10 @@
     </div>
   </header>
 
-  <!-- 네비게이션 메뉴 (기존 네이버 블로그 전체 링크 유지) -->
+  <!-- 네비게이션 메뉴 -->
   <nav>
     <div class="nav-container">
       <ul class="main-menu">
-        <!-- 지구여행 (드롭다운) -->
         <li class="has-dropdown">
           <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22&parentCategoryNo=22" target="_blank">지구여행 ▾</a>
           <ul class="dropdown-menu">
@@ -321,8 +322,6 @@
             <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=28" target="_blank">1998 아시아 육로횡단 <span class="count">(17)</span></a></li>
           </ul>
         </li>
-
-        <!-- 주 메뉴들 -->
         <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=21" target="_blank">팔도유람</a></li>
         <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=19" target="_blank">여행단상</a></li>
         <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=16" target="_blank">주절주절</a></li>
@@ -335,7 +334,7 @@
     </div>
   </nav>
 
-  <!-- 브렌트 트래블 스타일 대문(Hero) 영역 -->
+  <!-- hero11.jpg 배경이 들어가는 대문 섹션 -->
   <section class="hero-section">
     <div class="hero-content">
       <h1 class="hero-title">살며 사랑하며 여행하며~</h1>
