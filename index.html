@@ -7,13 +7,13 @@
   <style>
     :root {
       --primary-color: #03c75a;
-      --bg-color: #f8f9fa;
+      --bg-color: #f4f6f8;
       --card-bg: #ffffff;
-      --text-main: #212529;
-      --text-sub: #6c757d;
-      --nav-bg: #2c3e50;
-      --nav-hover: #34495e;
-      --accent-color: #3498db;
+      --text-main: #1e293b;
+      --text-sub: #64748b;
+      --nav-bg: #1e293b;
+      --nav-hover: #334155;
+      --accent-color: #38bdf8;
     }
 
     * {
@@ -32,48 +32,47 @@
       min-height: 100vh;
     }
 
-    /* 상단 헤더 영역 */
+    /* 1. 상단 최상단 로고 헤더 */
     header {
       background: #ffffff;
-      padding: 15px 20px;
-      border-bottom: 1px solid #e9ecef;
+      padding: 15px 24px;
+      border-bottom: 1px solid #e2e8f0;
     }
 
     .header-container {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
       display: flex;
       align-items: center;
-      justify-content: space-between; /* 왼쪽 메인로고, 오른쪽 도장로고 */
+      justify-content: space-between;
     }
 
     .main-logo {
-      height: 70px;
+      height: 65px;
       width: auto;
       object-fit: contain;
     }
 
     .stamp-logo {
-      height: 55px;
+      height: 50px;
       width: auto;
       object-fit: contain;
     }
 
-    /* 네비게이션 메인 바 */
+    /* 2. 네비게이션 메인 바 */
     nav {
       background-color: var(--nav-bg);
       position: sticky;
       top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
 
     .nav-container {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
-    /* 메인 메뉴 (1차) */
     .main-menu {
       display: flex;
       list-style: none;
@@ -86,8 +85,8 @@
 
     .main-menu > li > a {
       display: block;
-      padding: 15px 18px;
-      color: #ffffff;
+      padding: 16px 20px;
+      color: #f8fafc;
       text-decoration: none;
       font-weight: 600;
       font-size: 15px;
@@ -99,32 +98,32 @@
       color: var(--accent-color);
     }
 
-    /* 드롭다운 서브 메뉴 (2차) */
+    /* 드롭다운 서브 메뉴 */
     .dropdown-menu {
       display: none;
       position: absolute;
       top: 100%;
       left: 0;
       background-color: #ffffff;
-      min-width: 250px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      min-width: 260px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
       list-style: none;
       z-index: 1000;
-      max-height: 420px;
+      max-height: 450px;
       overflow-y: auto;
-      border-radius: 0 0 6px 6px;
-      border: 1px solid #e9ecef;
+      border-radius: 0 0 8px 8px;
+      border: 1px solid #e2e8f0;
     }
 
     .dropdown-menu li a {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 16px;
-      color: #333333;
+      padding: 12px 18px;
+      color: #334155;
       text-decoration: none;
       font-size: 14px;
-      border-bottom: 1px solid #f0f0f0;
+      border-bottom: 1px solid #f1f5f9;
       transition: background 0.2s, color 0.2s;
     }
 
@@ -133,9 +132,9 @@
     }
 
     .dropdown-menu li a:hover {
-      background-color: #f1f5f9;
+      background-color: #f8fafc;
       color: var(--accent-color);
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .count {
@@ -148,24 +147,131 @@
       display: block;
     }
 
-    main {
-      flex: 1;
-      max-width: 1100px;
-      width: 100%;
-      margin: 20px auto;
-      padding: 20px;
+    /* 3. 브렌트 트래블 스타일 히어로 대문 섹션 */
+    .hero-section {
+      position: relative;
+      height: 480px;
+      background: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.6)), 
+                  url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-align: center;
+      padding: 0 20px;
     }
 
-    /* 하단 푸터 영역 */
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero-title {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      font-weight: 300;
+      opacity: 0.95;
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+
+    /* 4. 메인 컨텐츠 카드가 들어가는 공간 */
+    main {
+      flex: 1;
+      max-width: 1200px;
+      width: 100%;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* 카드 그리드 레이아웃 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .destination-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .destination-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+    }
+
+    .card-img-wrapper {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .destination-card:hover .card-img-wrapper img {
+      transform: scale(1.08);
+    }
+
+    .card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.5;
+    }
+
+    /* 5. 하단 푸터 */
     footer {
-      background-color: #343a40;
-      color: #adb5bd;
-      padding: 25px 20px;
+      background-color: #0f172a;
+      color: #94a3b8;
+      padding: 35px 20px;
       margin-top: auto;
     }
 
     .footer-container {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -174,7 +280,6 @@
 
     .footer-info p {
       font-size: 14px;
-      line-height: 1.5;
     }
   </style>
 </head>
@@ -188,7 +293,7 @@
     </div>
   </header>
 
-  <!-- 네비게이션 메뉴 -->
+  <!-- 네비게이션 메뉴 (기존 네이버 블로그 전체 링크 유지) -->
   <nav>
     <div class="nav-container">
       <ul class="main-menu">
@@ -230,15 +335,70 @@
     </div>
   </nav>
 
-  <!-- 본문 컨텐츠 영역 -->
+  <!-- 브렌트 트래블 스타일 대문(Hero) 영역 -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">살며 사랑하며 여행하며~</h1>
+      <p class="hero-subtitle">함피 민병규의 지구 곳곳 여행 이야기와 생생한 기록들</p>
+    </div>
+  </section>
+
+  <!-- 메인 대표 여행지 카드 영역 -->
   <main>
+    <h2 class="section-title">🌏 지구여행 대표 이야기</h2>
+    
+    <div class="card-grid">
+      <!-- 카드 1: 다낭 -->
+      <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=46" target="_blank" class="destination-card">
+        <div class="card-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=600&q=80" alt="다낭">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">22~현재 다낭 (65)</h3>
+          <p class="card-desc">아름다운 바다와 삶의 여유가 넘치는 다낭 라이프 기록</p>
+        </div>
+      </a>
+
+      <!-- 카드 2: 태국북부 -->
+      <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=44" target="_blank" class="destination-card">
+        <div class="card-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=600&q=80" alt="태국북부">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">2022 태국북부 (45)</h3>
+          <p class="card-desc">치앙마이를 비롯한 고즈넉한 태국 북부의 자연과 일상</p>
+        </div>
+      </a>
+
+      <!-- 카드 3: 포르투갈 -->
+      <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=33" target="_blank" class="destination-card">
+        <div class="card-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=600&q=80" alt="포르투갈">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">2016 포르투갈 (12)</h3>
+          <p class="card-desc">리스본의 골목길과 리스와의 낭만이 있는 유럽 여행</p>
+        </div>
+      </a>
+
+      <!-- 카드 4: 아시아 육로횡단 -->
+      <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=28" target="_blank" class="destination-card">
+        <div class="card-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=600&q=80" alt="아시아 육로횡단">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">1998 아시아 육로횡단 (17)</h3>
+          <p class="card-desc">발길 따라 만나는 아시아 횡단의 뜻깊은 오프로드 소식</p>
+        </div>
+      </a>
+    </div>
   </main>
 
   <!-- 하단 푸터 -->
   <footer>
     <div class="footer-container">
       <div class="footer-info">
-        <p>© KoreaHostel All rights reserved.</p>
+        <p>© 살며 사랑하며 여행하며~ All rights reserved.</p>
       </div>
       <a href="https://blog.naver.com/hampinim" target="_blank"><img src="dojang11.png" alt="도장 로고" class="stamp-logo"></a>
     </div>
