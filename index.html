@@ -220,10 +220,17 @@
   }
 
   .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 한 줄에 4개 배치 */
+  gap: 20px;
+}
+
+/* 태블릿 이하 화면에서는 깔끔하게 2개씩 보이도록 미디어 쿼리 추가 */
+@media (max-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
   .destination-card {
     background: var(--card-bg);
@@ -243,10 +250,10 @@
   }
 
   .card-img-wrapper {
-    height: 200px;
-    overflow: hidden;
-    position: relative;
-  }
+  height: 360px; /* 기존 200px에서 세로 느낌이 나도록 높이를 확대 */
+  overflow: hidden;
+  position: relative;
+}
 
   .card-img-wrapper img {
     width: 100%;
