@@ -54,9 +54,12 @@
 
     /* 2. 심플 모바일 네비게이션 (4개 메뉴) */
     nav {
-      background-color: var(--nav-bg);
-      width: 100%;
-    }
+  background-color: var(--nav-bg);
+  width: 100%;
+  position: sticky;
+  top: 57px; /* 헤더의 높이만큼 띄워서 상단에 고정 */
+  z-index: 999; /* 헤더 바로 아래 레이어에 배치 */
+}
 
     .mobile-menu {
       display: flex;
