@@ -1,4 +1,4 @@
-User-agent: Yeti
+User-agent: *
 Allow: /
 Sitemap: https://KoreaHostel.com/sitemap.xml
 Sitemap: https://minbyungkyu.github.io/min/sitemap.xml
