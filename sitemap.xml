@@ -7,8 +7,23 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+
+    <url>
+    <loc>https://minbyungkyu.github.io/min/</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
   <url>
     <loc>https://KoreaHostel.com/index.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://minbyungkyu.github.io/min/index.html</loc>
     <lastmod>2026-08-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -17,6 +32,13 @@
   <!-- 모바일 메인 페이지 -->
   <url>
     <loc>https://KoreaHostel.com/m_index.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+   <url>
+    <loc>https://minbyungkyu.github.io/min/m_index.html</loc>
     <lastmod>2026-08-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
