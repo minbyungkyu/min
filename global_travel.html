@@ -1,259 +1,231 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>지구여행 | 함피 민병규</title>
-  <meta name="description" content="다낭의 아침 바다부터 포르투갈의 골목, 태국 북부의 밀림, 중앙아시아의 광야까지. 지구 곳곳에 남겨온 발자국들을 기록합니다.">
-  <link rel="icon" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지구여행 | 글로벌 트래블</title>
+    <style>
+        /* 기본 스타일 리셋 */
+        body, h1, h2, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
 
-  <style>
-    :root {
-      --primary-color: #03c75a;
-      --bg-color: #f4f6f8;
-      --card-bg: #ffffff;
-      --text-main: #1e293b;
-      --text-sub: #64748b;
-      --nav-bg: #1e293b;
-      --nav-hover: #334155;
-      --accent-color: #38bdf8;
-    }
+        body {
+            font-family: 'Noto Sans KR', sans-serif; /* 한글 폰트 */
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+        /* 메인 컨테이너 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
 
-    body {
-      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      line-height: 1.6;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+        /* 헤더 스타일 (필요시 추가) */
+        header {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 30px;
+        }
 
-    /* 1. 상단 로고 헤더 */
-    header { background: #ffffff; padding: 15px 24px; border-bottom: 1px solid #e2e8f0; }
-    .header-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-    .main-logo { height: 130px; width: auto; object-fit: contain; }
-    .stamp-logo { height: 110px; width: auto; object-fit: contain; }
+        .header-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2e5a4e; /* 이미지 톤앤매너 */
+        }
 
-    /* 2. 네비게이션 메인 바 */
-    nav { background-color: var(--nav-bg); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-    .nav-container { max-width: 1200px; margin: 0 auto; }
-    .main-menu { display: flex; list-style: none; flex-wrap: wrap; }
-    .main-menu > li { position: relative; }
-    .main-menu > li > a {
-      display: block;
-      padding: 16px 20px;
-      color: #f8fafc;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 15px;
-      transition: background 0.3s, color 0.3s;
-    }
-    .main-menu > li:hover > a, .main-menu > li.active > a {
-      background-color: var(--nav-hover);
-      color: var(--accent-color);
-    }
+        /* 지구여행 섹션 */
+        .travel-section {
+            background-color: #fff;
+            padding: 60px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 40px; /* 이미지와 텍스트 사이 간격 */
+        }
 
-    /* 드롭다운 서브 메뉴 */
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #ffffff;
-      min-width: 260px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-      list-style: none;
-      z-index: 1000;
-      max-height: 450px;
-      overflow-y: auto;
-      border-radius: 0 0 8px 8px;
-      border: 1px solid #e2e8f0;
-    }
-    .dropdown-menu li a {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 18px;
-      color: #334155;
-      text-decoration: none;
-      font-size: 14px;
-      border-bottom: 1px solid #f1f5f9;
-      transition: background 0.2s, color 0.2s;
-    }
-    .dropdown-menu li:last-child a { border-bottom: none; }
-    .dropdown-menu li a:hover { background-color: #f8fafc; color: var(--accent-color); font-weight: 600; }
-    .count { color: var(--text-sub); font-size: 12px; font-weight: normal; }
-    .has-dropdown:hover .dropdown-menu { display: block; }
+        /* 여행지 이미지 스타일 */
+        .travel-image {
+            flex: 1;
+            max-width: 500px;
+            height: auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
 
-    /* 3. 지구여행 전용 메인 콘텐츠 */
-    main {
-      flex: 1;
-      max-width: 1000px;
-      width: 100%;
-      margin: 50px auto;
-      padding: 0 20px;
-    }
+        .travel-image img {
+            width: 100%;
+            display: block;
+        }
 
-    .travel-card {
-      background: var(--card-bg);
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-      display: flex;
-      flex-direction: column;
-    }
+        /* 텍스트 콘텐츠 스타일 */
+        .travel-content {
+            flex: 1;
+        }
 
-    .travel-hero-img {
-      width: 100%;
-      height: 420px;
-      object-fit: cover;
-    }
+        .category {
+            font-size: 14px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
 
-    .travel-body {
-      padding: 40px;
-    }
+        h1.main-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #2e5a4e; /* 이미지의 진한 녹색 톤 */
+            margin-bottom: 5px;
+        }
 
-    .sub-category {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--accent-color);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-      display: block;
-    }
+        h2.sub-title {
+            font-size: 20px;
+            font-weight: normal;
+            color: #555;
+            margin-bottom: 25px;
+        }
 
-    .page-title {
-      font-size: 32px;
-      font-weight: 800;
-      color: var(--text-main);
-      margin-bottom: 24px;
-    }
+        .description {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
 
-    .page-desc {
-      font-size: 17px;
-      color: #475569;
-      line-height: 1.8;
-      margin-bottom: 28px;
-      word-break: keep-all;
-    }
+        /* 스탬프 로고 스타일 (필요시) */
+        .stamp-logo {
+            display: inline-block;
+            margin-bottom: 20px;
+            opacity: 0.7;
+        }
 
-    .keywords-tag {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--primary-color);
-      background-color: #f0fdf4;
-      padding: 12px 20px;
-      border-radius: 8px;
-      display: inline-block;
-      margin-bottom: 32px;
-    }
+        /* 더보기 버튼 스타일 */
+        .btn-more {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            background-color: #2e5a4e;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
 
-    .more-btn {
-      display: inline-block;
-      padding: 14px 28px;
-      background-color: var(--nav-bg);
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 700;
-      border-radius: 8px;
-      transition: background-color 0.2s, transform 0.2s;
-    }
+        .btn-more:hover {
+            background-color: #22463e;
+        }
 
-    .more-btn:hover {
-      background-color: var(--primary-color);
-      transform: translateY(-2px);
-    }
+        .btn-more::after {
+            content: ' →';
+            font-size: 1.2em;
+        }
 
-    /* 4. 푸터 */
-    footer { background-color: #0f172a; color: #94a3b8; padding: 35px 20px; margin-top: auto; }
-    .footer-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        /* 태그 스타일 */
+        .tags {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777;
+        }
 
-    @media (max-width: 768px) {
-      .travel-hero-img { height: 260px; }
-      .travel-body { padding: 24px; }
-      .page-title { font-size: 24px; }
-    }
-  </style>
+        .tags-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background-color: #f1f1f1;
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+
+        /* 푸터 스타일 (필요시 추가) */
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            border-top: 1px solid #eee;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        /* 모바일 반응형 스타일 */
+        @media (max-width: 900px) {
+            .travel-section {
+                flex-direction: column;
+                padding: 40px;
+                text-align: center;
+            }
+            
+            .travel-image {
+                margin-bottom: 30px;
+                max-width: 100%;
+            }
+
+            .tags-list {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- 상단 로고 헤더 -->
-  <header>
-    <div class="header-container">
-      <a href="index.html"><img src="logo1.png" alt="메인 로고" class="main-logo"></a>
-      <a href="index.html"><img src="dojang11.png" alt="도장 로고" class="stamp-logo"></a>
+    <!-- 헤더 섹션 (로고) -->
+    <header>
+        <div class="header-logo">GLOBAL TRAVEL</div>
+    </header>
+
+    <div class="container">
+        <!-- 지구여행 상세 섹션 -->
+        <section class="travel-section">
+            <div class="travel-content">
+                <!-- 스탬프 로고 (옵션) -->
+                <img src="path_to_your_stamp_logo.png" alt="Travel Stamp Logo" class="stamp-logo">
+
+                <h1 class="main-title">지구여행</h1>
+                <h2 class="sub-title">GLOBAL TRAVEL</h2>
+                
+                <p class="description">
+                    다낭의 아침 바다부터 포르투갈의 골목, 태국 북부의 밀림, 중앙아시아의 광야까지. 지구 곳곳에 남겨온 발자국들을 기록합니다. 아시아 육로횡단부터 미서부 캠핑까지, 17개 나라 이상의 여행기가 담겨 있습니다.
+                </p>
+
+                <!-- 더보기 버튼 -->
+                <a href="#more" class="btn-more">더보기</a>
+
+                <!-- 태그 목록 -->
+                <div class="tags">
+                    <ul class="tags-list">
+                        <li class="tag">다낭</li>
+                        <li class="tag">태국</li>
+                        <li class="tag">포르투갈</li>
+                        <li class="tag">일본</li>
+                        <li class="tag">중앙아시아</li>
+                        <li class="tag">외</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 여행지 이미지 -->
+            <div class="travel-image">
+                <img src="path_to_your_travel_image.jpg" alt="멋진 여행지 사진">
+            </div>
+        </section>
     </div>
-  </header>
 
-  <!-- 상단 네비게이션 메뉴 (기존 인덱스와 동일) -->
-  <nav>
-    <div class="nav-container">
-      <ul class="main-menu">
-        <li class="has-dropdown active">
-          <a href="global_travel.html">지구여행 ▾</a>
-          <ul class="dropdown-menu">
-            <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=46" target="_blank">22~현재 다낭 <span class="count">(65)</span></a></li>
-            <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=48" target="_blank">2023 방콕 <span class="count">(8)</span></a></li>
-            <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=44" target="_blank">2022 태국북부 <span class="count">(45)</span></a></li>
-            <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=33" target="_blank">2016 포르투갈 <span class="count">(12)</span></a></li>
-            <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=31" target="_blank">2009 미서부 캠핑여행 <span class="count">(25)</span></a></li>
-            <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=28" target="_blank">1998 아시아 육로횡단 <span class="count">(17)</span></a></li>
-          </ul>
-        </li>
-        <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=21" target="_blank">팔도유람</a></li>
-        <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=19" target="_blank">여행단상</a></li>
-        <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=16" target="_blank">주절주절</a></li>
-        <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=18" target="_blank">읽고보고</a></li>
-        <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=7" target="_blank">홍대성산망원</a></li>
-        <li><a href="https://blog.naver.com/guestbook/GuestBookList.naver?blogId=hampinim" target="_blank">톡톡이야기방</a></li>
-        <li><a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=23&parentCategoryNo=23" target="_blank">인도엿보기(2008)</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- 지구여행 콘텐츠 영역 -->
-  <main>
-    <article class="travel-card">
-      <!-- 지구여행 감성 대표 이미지 -->
-      <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1200&q=80" alt="지구여행" class="travel-hero-img">
-
-      <div class="travel-body">
-        <span class="sub-category">Global Travel</span>
-        <h1 class="page-title">지구여행</h1>
-
-        <p class="page-desc">
-          다낭의 아침 바다부터 포르투갈의 골목, 태국 북부의 밀림, 중앙아시아의 광야까지. 지구 곳곳에 남겨온 발자국들을 기록합니다. 아시아 육로횡단부터 미서부 캠핑까지, 17개 나라 이상의 여행기가 담겨 있습니다.
-        </p>
-
-        <div class="keywords-tag">
-          다낭 · 태국 · 포르투갈 · 일본 · 중앙아시아 외
-        </div>
-
-        <div>
-          <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22&parentCategoryNo=22" target="_blank" class="more-btn">
-            더보기 &rarr;
-          </a>
-        </div>
-      </div>
-    </article>
-  </main>
-
-  <!-- 하단 푸터 -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-info">
-        <p>© KoreaHostel All rights reserved.</p>
-      </div>
-      <a href="https://blog.naver.com/hampinim" target="_blank">
-        <img src="dojang11.png" alt="도장 로고" class="stamp-logo">
-      </a>
-    </div>
-  </footer>
+    <!-- 푸터 섹션 -->
+    <footer>
+        &copy; 2023 지구여행. All rights reserved.
+    </footer>
 
 </body>
 </html>
