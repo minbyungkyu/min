@@ -10,8 +10,8 @@
   <!-- 서체 불러오기 (고급스러운 Serif / Sans-serif 조합) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Serif+KR:wght@400;600;700&family=Pretendard:wght@400;500;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Pretendard:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary-color: #03c75a;
@@ -62,37 +62,7 @@
       color: var(--accent-color);
     }
 
-    /* 드롭다운 서브 메뉴 */
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #ffffff;
-      min-width: 260px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-      list-style: none;
-      z-index: 1000;
-      max-height: 450px;
-      overflow-y: auto;
-      border-radius: 0 0 8px 8px;
-      border: 1px solid #e2e8f0;
-    }
-    .dropdown-menu li a {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 18px;
-      color: #334155;
-      text-decoration: none;
-      font-size: 14px;
-      border-bottom: 1px solid #f1f5f9;
-      transition: background 0.2s, color 0.2s;
-    }
-    .dropdown-menu li:last-child a { border-bottom: none; }
-    .dropdown-menu li a:hover { background-color: #f8fafc; color: var(--accent-color); font-weight: 600; }
-    .count { color: var(--text-sub); font-size: 12px; font-weight: normal; }
-    .has-dropdown:hover .dropdown-menu { display: block; }
+   
 
     /* 3. 지구여행 전용 오버레이 히어로 영역 */
     .travel-hero-container {
