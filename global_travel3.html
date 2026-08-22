@@ -230,29 +230,6 @@
       margin-bottom: 20px;
     }
 
-    .shuffle-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255,255,255,0.7);
-      border: 1.5px solid rgba(28, 61, 50, 0.3);
-      color: var(--theme-green);
-      font-size: 12px;
-      font-weight: 700;
-      padding: 7px 14px;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: all 0.2s;
-      font-family: 'Pretendard', sans-serif;
-      letter-spacing: 0.3px;
-    }
-    .shuffle-btn:hover {
-      background: var(--theme-green);
-      border-color: var(--theme-green);
-      color: #fff;
-    }
-    .shuffle-btn .icon { font-size: 14px; display: inline-block; transition: transform 0.4s; }
-    .shuffle-btn:hover .icon { transform: rotate(180deg); }
 
     .grid-note {
       font-size: 11px;
@@ -347,9 +324,7 @@
 
         <!-- 컨트롤 -->
         <div class="grid-controls">
-          <button class="shuffle-btn" onclick="shufflePosts()" id="shuffleBtn">
-            <span class="icon">↺</span> 다시 섞기
-          </button>
+         
           <span class="grid-note" id="gridNote"></span>
         </div>
 
