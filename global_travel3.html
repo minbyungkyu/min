@@ -439,6 +439,17 @@
       `).join('');
     }
 
+    function shufflePosts() {
+      renderPosts(shuffle(POST_POOL));
+      const note = document.getElementById('gridNote');
+      if (POST_POOL.length > 6) {
+        note.textContent = `총 ${POST_POOL.length}개 중 랜덤 6개`;
+      } else {
+        note.textContent = `글 ${POST_POOL.length}개`;
+      }
+    }
+
+    shufflePosts();
   </script>
 
 </body>
