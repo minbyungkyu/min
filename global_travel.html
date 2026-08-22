@@ -1,85 +1,309 @@
-<!-- 지구여행 메인 섹션 -->
-<main class="travel-container">
-  <div class="hero-inner">
-    <!-- 헤더 / 소개 영역 -->
-    <div class="hero-content-box">
-      <h1 class="main-title">지구여행</h1>
-      <div class="sub-title">GLOBAL TRAVEL</div>
-      <p class="description-text">
-        다낭의 아침 바다부터 포르투갈의 골목,<br>
-        태국 북부의 밀림, 중앙아시아의 광야.<br>
-        지구 곳곳에 남겨온 발자국들.
-      </p>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지구여행 - HAMPI</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  
+  <style>
+    /* Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+    :root {
+      --bg-color: #0f1115;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --card-hover-bg: rgba(255, 255, 255, 0.08);
+      --text-main: #f0f2f5;
+      --text-sub: #a0a5b1;
+      --accent-color: #3b82f6;
+      --border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 상단 네비게이션 */
+    header {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+    }
+
+    .logo img {
+      height: 32px;
+    }
+
+    nav a {
+      color: var(--text-main);
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 15px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
+    }
+
+    /* 메인 히어로 컨테이너 */
+    .travel-container {
+      position: relative;
+      padding: 140px 20px 80px;
+      background: linear-gradient(180deg, rgba(15, 17, 21, 0.6) 0%, var(--bg-color) 100%),
+                  url('hero11.jpg') center/cover no-repeat fixed;
+      min-height: 100vh;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .hero-content-box {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .main-title {
+      font-size: 42px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+
+    .sub-title {
+      font-size: 14px;
+      letter-spacing: 3px;
+      color: var(--accent-color);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .description-text {
+      font-size: 18px;
+      color: var(--text-sub);
+      font-weight: 300;
+      word-break: keep-all;
+    }
+
+    /* 포스트 카드 그리드 */
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+    }
+
+    .post-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      backdrop-filter: blur(10px);
+    }
+
+    .post-card:hover {
+      transform: translateY(-6px);
+      background: var(--card-hover-bg);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .card-thumb {
+      height: 190px;
+      background-size: cover;
+      background-position: center;
+      background-color: #1a1d24;
+    }
+
+    .card-content {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-tag {
+      font-size: 12px;
+      color: var(--accent-color);
+      font-weight: 600;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+
+    /* 버튼 스타일 */
+    .btn-more {
+      display: inline-block;
+      padding: 12px 32px;
+      background: transparent;
+      border: 1px solid var(--accent-color);
+      color: var(--accent-color);
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      transition: all 0.25s;
+    }
+
+    .btn-more:hover {
+      background: var(--accent-color);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    }
+
+    footer {
+      margin-top: auto;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 13px;
+      color: var(--text-sub);
+      border-top: 1px solid var(--border-color);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 헤더 / 네비게이션 -->
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="logo1.png" alt="HAMPI LOGO"></a>
     </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="global_travel.html" style="color: var(--accent-color);">지구여행</a>
+      <a href="domestic.html">국내여행</a>
+    </nav>
+  </header>
 
-    <!-- 블로그 글 목록 6개 그리드 -->
-    <div class="post-grid">
-      <!-- 1번 글 -->
-      <a href="블로그_포스트_1_주소" target="_blank" class="post-card">
-        <div class="card-thumb" style="background-image: url('대표이미지1.jpg');"></div>
-        <div class="card-content">
-          <span class="card-tag">베트남</span>
-          <h3 class="card-title">다낭 한달살기 기록 및 팁 총정리</h3>
-          <p class="card-desc">다낭에서 한 달간 머물며 느꼈던 아침 바다와 소소한 일상의 기록들...</p>
-        </div>
-      </a>
+  <!-- 지구여행 메인 섹션 -->
+  <main class="travel-container">
+    <div class="hero-inner">
+      <!-- 헤더 / 소개 영역 -->
+      <div class="hero-content-box">
+        <h1 class="main-title">지구여행</h1>
+        <div class="sub-title">GLOBAL TRAVEL</div>
+        <p class="description-text">
+          다낭의 아침 바다부터 포르투갈의 골목,<br>
+          태국 북부의 밀림, 중앙아시아의 광야.<br>
+          지구 곳곳에 남겨온 발자국들.
+        </p>
+      </div>
 
-      <!-- 2번 글 -->
-      <a href="블로그_포스트_2_주소" target="_blank" class="post-card">
-        <div class="card-thumb" style="background-image: url('대표이미지2.jpg');"></div>
-        <div class="card-content">
-          <span class="card-tag">포르투갈</span>
-          <h3 class="card-title">포르투 골목길 따라 걷는 아침 산책</h3>
-          <p class="card-desc">아주 오래된 아줄레주 타일 벽과 언덕길 너머로 보이는 와이너리 풍경...</p>
-        </div>
-      </a>
+      <!-- 블로그 글 목록 6개 그리드 -->
+      <div class="post-grid">
+        <!-- 1번 글 -->
+        <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22" target="_blank" class="post-card">
+          <div class="card-thumb" style="background-image: url('hero1122.jpg');"></div>
+          <div class="card-content">
+            <span class="card-tag">베트남</span>
+            <h3 class="card-title">다낭 한달살기 기록 및 팁 총정리</h3>
+            <p class="card-desc">다낭에서 한 달간 머물며 느꼈던 아침 바다와 소소한 일상의 기록들...</p>
+          </div>
+        </a>
 
-      <!-- 3번 글 -->
-      <a href="블로그_포스트_3_주소" target="_blank" class="post-card">
-        <div class="card-thumb" style="background-image: url('대표이미지3.jpg');"></div>
-        <div class="card-content">
-          <span class="card-tag">태국</span>
-          <h3 class="card-title">태국 북부 치앙마이 밀림 오지 여행</h3>
-          <p class="card-desc">자연 그대로의 밀림과 울창한 숲 속에서 만난 특별한 수라상 이야기...</p>
-        </div>
-      </a>
+        <!-- 2번 글 -->
+        <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22" target="_blank" class="post-card">
+          <div class="card-thumb" style="background-image: url('hero11.jpg');"></div>
+          <div class="card-content">
+            <span class="card-tag">포르투갈</span>
+            <h3 class="card-title">포르투 골목길 따라 걷는 아침 산책</h3>
+            <p class="card-desc">아주 오래된 아줄레주 타일 벽과 언덕길 너머로 보이는 와이너리 풍경...</p>
+          </div>
+        </a>
 
-      <!-- 4번 글 -->
-      <a href="블로그_포스트_4_주소" target="_blank" class="post-card">
-        <div class="card-thumb" style="background-image: url('대표이미지4.jpg');"></div>
-        <div class="card-content">
-          <span class="card-tag">중앙아시아</span>
-          <h3 class="card-title">카자흐스탄 광야를 지나는 육로 여정</h3>
-          <p class="card-desc">끝없이 펼쳐지는 지평선과 광대한 대자연을 품은 중앙아시아 육로횡단...</p>
-        </div>
-      </a>
+        <!-- 3번 글 -->
+        <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22" target="_blank" class="post-card">
+          <div class="card-thumb" style="background-image: url('1bkk.jpg');"></div>
+          <div class="card-content">
+            <span class="card-tag">태국</span>
+            <h3 class="card-title">태국 북부 치앙마이 밀림 오지 여행</h3>
+            <p class="card-desc">자연 그대로의 밀림과 울창한 숲 속에서 만난 특별한 수라상 이야기...</p>
+          </div>
+        </a>
 
-      <!-- 5번 글 -->
-      <a href="블로그_포스트_5_주소" target="_blank" class="post-card">
-        <div class="card-thumb" style="background-image: url('대표이미지5.jpg');"></div>
-        <div class="card-content">
-          <span class="card-tag">미서부</span>
-          <h3 class="card-title">미서부 국립공원 로드트립 & 캠핑</h3>
-          <p class="card-desc">그랜드 캐니언부터 붉은 바위 산맥까지, 텐트 속에서 올려다본 밤하늘...</p>
-        </div>
-      </a>
+        <!-- 4번 글 -->
+        <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22" target="_blank" class="post-card">
+          <div class="card-thumb" style="background-image: url('kaja.jpg');"></div>
+          <div class="card-content">
+            <span class="card-tag">중앙아시아</span>
+            <h3 class="card-title">카자흐스탄 광야를 지나는 육로 여정</h3>
+            <p class="card-desc">끝없이 펼쳐지는 지평선과 광대한 대자연을 품은 중앙아시아 육로횡단...</p>
+          </div>
+        </a>
 
-      <!-- 6번 글 -->
-      <a href="블로그_포스트_6_주소" target="_blank" class="post-card">
-        <div class="card-thumb" style="background-image: url('대표이미지6.jpg');"></div>
-        <div class="card-content">
-          <span class="card-tag">일본</span>
-          <h3 class="card-title">후쿠오카·간사이 소도시 골목 탐방기</h3>
-          <p class="card-desc">화려한 도시 너머 고즈넉한 일본 소도시의 분위기와 맛집 이야기...</p>
-        </div>
-      </a>
+        <!-- 5번 글 -->
+        <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22" target="_blank" class="post-card">
+          <div class="card-thumb" style="background-image: url('1westusa.jpg');"></div>
+          <div class="card-content">
+            <span class="card-tag">미서부</span>
+            <h3 class="card-title">미서부 국립공원 로드트립 & 캠핑</h3>
+            <p class="card-desc">그랜드 캐니언부터 붉은 바위 산맥까지, 텐트 속에서 올려다본 밤하늘...</p>
+          </div>
+        </a>
+
+        <!-- 6번 글 -->
+        <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22" target="_blank" class="post-card">
+          <div class="card-thumb" style="background-image: url('hero1122.jpg');"></div>
+          <div class="card-content">
+            <span class="card-tag">일본</span>
+            <h3 class="card-title">후쿠오카·간사이 소도시 골목 탐방기</h3>
+            <p class="card-desc">화려한 도시 너머 고즈넉한 일본 소도시의 분위기와 맛집 이야기...</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- 하단 전체보기 버튼 -->
+      <div style="text-align: center; margin-top: 50px;">
+        <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22&parentCategoryNo=22" target="_blank" class="btn-more">
+          블로그에서 전체글 보기 &rarr;
+        </a>
+      </div>
     </div>
+  </main>
 
-    <!-- 하단 전체보기 버튼 -->
-    <div style="text-align: center; margin-top: 40px;">
-      <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22&parentCategoryNo=22" target="_blank" class="btn-more">
-        블로그에서 전체글 보기 &rarr;
-      </a>
-    </div>
-  </div>
-</main>
+  <footer>
+    <p>&copy; HAMPI. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
