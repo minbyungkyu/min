@@ -1,340 +1,347 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>지구여행 - HAMPI</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  
-  <style>
-    /* Google Fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지구여행 | HAMPI</title>
+    <!-- global_travel-old.html 원본 폰트 및 스타일 -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+KR:wght@300;400;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --text-color: #e6e6e6;
+            --text-secondary: #a0a0a0;
+            --accent-color: #d4af37;
+            --font-serif: 'Noto Serif KR', serif;
+            --font-sans: 'Montserrat', sans-serif;
+            --font-display: 'Cinzel', serif;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.08);
+        }
 
-    :root {
-      --bg-color: #0f1115;
-      --list-bg: rgba(255, 255, 255, 0.03);
-      --list-hover-bg: rgba(255, 255, 255, 0.08);
-      --text-main: #f0f2f5;
-      --text-sub: #a0a5b1;
-      --accent-color: #3b82f6;
-      --border-color: rgba(255, 255, 255, 0.08);
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-sans);
+            line-height: 1.8;
+            word-break: keep-all;
+        }
 
-    body {
-      font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+        /* global_travel-old.html 원본 헤더 / 로고 / 메뉴 */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: linear-gradient(to bottom, rgba(13,13,13,0.9) 0%, rgba(13,13,13,0) 100%);
+        }
 
-    /* 헤더 / 네비게이션 (global_travel-old.html 원본 스타일) */
-    header {
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-    }
+        .logo a {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
 
-    .logo img {
-      height: 32px;
-    }
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
 
-    nav a {
-      color: var(--text-main);
-      text-decoration: none;
-      margin-left: 24px;
-      font-size: 15px;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
 
-    nav a:hover {
-      color: var(--accent-color);
-    }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-color);
+        }
 
-    /* 히어로 컨테이너 (global_travel-old.html 원본 배경 스타일) */
-    .travel-container {
-      position: relative;
-      padding: 140px 20px 80px;
-      background: linear-gradient(180deg, rgba(15, 17, 21, 0.75) 0%, var(--bg-color) 100%),
-                  url('hero11.jpg') center/cover no-repeat fixed;
-      min-height: 100vh;
-    }
+        /* 메인 히어로 섹션 */
+        .hero {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(13, 13, 13, 0.5), rgba(13, 13, 13, 0.8)), url('hero11.jpg') center/cover no-repeat;
+            padding: 0 20px;
+            margin-bottom: 60px;
+        }
 
-    .hero-inner {
-      max-width: 800px;
-      margin: 0 auto;
-    }
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 42px;
+            font-weight: 400;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
 
-    .hero-content-box {
-      text-align: center;
-      margin-bottom: 50px;
-    }
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            max-width: 600px;
+            font-family: var(--font-serif);
+        }
 
-    .main-title {
-      font-size: 42px;
-      font-weight: 700;
-      letter-spacing: -1px;
-      margin-bottom: 8px;
-    }
+        /* 본문 영역 (6개 글 리스트 형태) */
+        .container {
+            max-width: 860px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
 
-    .sub-title {
-      font-size: 14px;
-      letter-spacing: 3px;
-      color: var(--accent-color);
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
+        .post-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
-    .description-text {
-      font-size: 17px;
-      color: var(--text-sub);
-      font-weight: 300;
-      word-break: keep-all;
-    }
+        .post-item {
+            display: flex;
+            align-items: center;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 20px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
 
-    /* 포스트 리스트 스타일 */
-    .post-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+        .post-item:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.05);
+        }
 
-    .post-item {
-      display: flex;
-      align-items: center;
-      background: var(--list-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 20px 24px;
-      text-decoration: none;
-      color: inherit;
-      backdrop-filter: blur(8px);
-      transition: all 0.25s ease;
-    }
+        .post-thumb {
+            width: 120px;
+            height: 80px;
+            border-radius: 6px;
+            background-size: cover;
+            background-position: center;
+            flex-shrink: 0;
+            margin-right: 24px;
+        }
 
-    .post-item:hover {
-      background: var(--list-hover-bg);
-      border-color: rgba(255, 255, 255, 0.2);
-      transform: translateX(6px);
-    }
+        .post-info {
+            flex-grow: 1;
+            min-width: 0;
+        }
 
-    .post-thumb {
-      width: 100px;
-      height: 70px;
-      border-radius: 8px;
-      background-size: cover;
-      background-position: center;
-      flex-shrink: 0;
-      margin-right: 20px;
-    }
+        .post-tag {
+            font-size: 12px;
+            color: var(--accent-color);
+            font-family: var(--font-display);
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+            display: block;
+        }
 
-    .post-info {
-      flex-grow: 1;
-      min-width: 0;
-    }
+        .post-title {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--text-color);
+            margin-bottom: 6px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
-    .post-tag {
-      font-size: 12px;
-      color: var(--accent-color);
-      font-weight: 600;
-      margin-bottom: 4px;
-      display: block;
-    }
+        .post-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
-    .post-title {
-      font-size: 17px;
-      font-weight: 600;
-      color: var(--text-main);
-      margin-bottom: 4px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+        .post-arrow {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-left: 20px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
 
-    .post-desc {
-      font-size: 13px;
-      color: var(--text-sub);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+        .post-item:hover .post-arrow {
+            color: var(--accent-color);
+            transform: translateX(5px);
+        }
 
-    .post-arrow {
-      font-size: 18px;
-      color: var(--text-sub);
-      margin-left: 16px;
-      transition: color 0.2s, transform 0.2s;
-    }
+        .btn-wrapper {
+            text-align: center;
+            margin-top: 50px;
+        }
 
-    .post-item:hover .post-arrow {
-      color: var(--accent-color);
-      transform: translateX(4px);
-    }
+        .btn-more {
+            display: inline-block;
+            padding: 12px 36px;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 2px;
+            font-family: var(--font-display);
+            transition: all 0.3s ease;
+        }
 
-    .btn-more {
-      display: inline-block;
-      padding: 12px 32px;
-      background: transparent;
-      border: 1px solid var(--accent-color);
-      color: var(--accent-color);
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 15px;
-      transition: all 0.25s;
-    }
+        .btn-more:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+        }
 
-    .btn-more:hover {
-      background: var(--accent-color);
-      color: #fff;
-      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-    }
+        /* global_travel-old.html 원본 푸터 */
+        footer {
+            padding: 50px 20px;
+            text-align: center;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-secondary);
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
 
-    /* 푸터 (global_travel-old.html 원본 스타일) */
-    footer {
-      margin-top: auto;
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 13px;
-      color: var(--text-sub);
-      border-top: 1px solid var(--border-color);
-    }
-
-    @media (max-width: 600px) {
-      .post-item {
-        padding: 16px;
-      }
-      .post-thumb {
-        width: 80px;
-        height: 60px;
-        margin-right: 14px;
-      }
-      .post-title {
-        font-size: 15px;
-      }
-      .post-desc {
-        display: none;
-      }
-    }
-  </style>
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+            .nav-links {
+                gap: 20px;
+            }
+            .post-thumb {
+                width: 90px;
+                height: 65px;
+                margin-right: 16px;
+            }
+            .post-title {
+                font-size: 16px;
+            }
+            .post-desc {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- global_travel-old.html 원본 헤더 / 네비게이션 -->
-  <header>
-    <div class="logo">
-      <a href="index.html"><img src="logo1.png" alt="HAMPI LOGO"></a>
-    </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="global_travel.html" style="color: var(--accent-color);">지구여행</a>
-      <a href="domestic.html">국내여행</a>
-    </nav>
-  </header>
+    <!-- global_travel-old.html 원본 헤더 -->
+    <header>
+        <div class="logo">
+            <a href="index.html">HAMPI</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="global_travel.html" class="active">지구여행</a></li>
+            <li><a href="domestic.html">국내여행</a></li>
+        </ul>
+    </header>
 
-  <!-- 지구여행 메인 섹션 -->
-  <main class="travel-container">
-    <div class="hero-inner">
-      <div class="hero-content-box">
-        <h1 class="main-title">지구여행</h1>
-        <div class="sub-title">GLOBAL TRAVEL</div>
-        <p class="description-text">
-          다낭의 아침 바다부터 포르투갈의 골목,<br>
-          태국 북부의 밀림, 중앙아시아의 광야.<br>
-          지구 곳곳에 남겨온 발자국들.
-        </p>
-      </div>
+    <!-- 히어로 섹션 -->
+    <section class="hero">
+        <h1>지구여행</h1>
+        <p>다낭의 아침 바다부터 포르투갈의 골목, 태국 북부의 밀림, 중앙아시아의 광야.<br>지구 곳곳에 남겨온 발자국들.</p>
+    </section>
 
-      <!-- 리스트 형태 6개 포스트 목록 -->
-      <div class="post-list">
-        <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22" target="_blank" class="post-item">
-          <div class="post-thumb" style="background-image: url('hero1122.jpg');"></div>
-          <div class="post-info">
-            <span class="post-tag">베트남</span>
-            <h3 class="post-title">다낭 한달살기 기록 및 팁 총정리</h3>
-            <p class="post-desc">다낭에서 한 달간 머물며 느꼈던 아침 바다와 소소한 일상의 기록들...</p>
-          </div>
-          <div class="post-arrow">&rarr;</div>
-        </a>
+    <!-- 메인 콘텐츠 (리스트 형태) -->
+    <main class="container">
+        <div class="post-list">
+            <!-- 1번 글 -->
+            <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22" target="_blank" class="post-item">
+                <div class="post-thumb" style="background-image: url('hero1122.jpg');"></div>
+                <div class="post-info">
+                    <span class="post-tag">VIETNAM</span>
+                    <h3 class="post-title">다낭 한달살기 기록 및 팁 총정리</h3>
+                    <p class="post-desc">다낭에서 한 달간 머물며 느꼈던 아침 바다와 소소한 일상의 기록들...</p>
+                </div>
+                <div class="post-arrow">&rarr;</div>
+            </a>
 
-        <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22" target="_blank" class="post-item">
-          <div class="post-thumb" style="background-image: url('hero11.jpg');"></div>
-          <div class="post-info">
-            <span class="post-tag">포르투갈</span>
-            <h3 class="post-title">포르투 골목길 따라 걷는 아침 산책</h3>
-            <p class="post-desc">아주 오래된 아줄레주 타일 벽과 언덕길 너머로 보이는 와이너리 풍경...</p>
-          </div>
-          <div class="post-arrow">&rarr;</div>
-        </a>
+            <!-- 2번 글 -->
+            <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22" target="_blank" class="post-item">
+                <div class="post-thumb" style="background-image: url('hero11.jpg');"></div>
+                <div class="post-info">
+                    <span class="post-tag">PORTUGAL</span>
+                    <h3 class="post-title">포르투 골목길 따라 걷는 아침 산책</h3>
+                    <p class="post-desc">아주 오래된 아줄레주 타일 벽과 언덕길 너머로 보이는 와이너리 풍경...</p>
+                </div>
+                <div class="post-arrow">&rarr;</div>
+            </a>
 
-        <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22" target="_blank" class="post-item">
-          <div class="post-thumb" style="background-image: url('1bkk.jpg');"></div>
-          <div class="post-info">
-            <span class="post-tag">태국</span>
-            <h3 class="post-title">태국 북부 치앙마이 밀림 오지 여행</h3>
-            <p class="post-desc">자연 그대로의 밀림과 울창한 숲 속에서 만난 특별한 수라상 이야기...</p>
-          </div>
-          <div class="post-arrow">&rarr;</div>
-        </a>
+            <!-- 3번 글 -->
+            <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22" target="_blank" class="post-item">
+                <div class="post-thumb" style="background-image: url('1bkk.jpg');"></div>
+                <div class="post-info">
+                    <span class="post-tag">THAILAND</span>
+                    <h3 class="post-title">태국 북부 치앙마이 밀림 오지 여행</h3>
+                    <p class="post-desc">자연 그대로의 밀림과 울창한 숲 속에서 만난 특별한 수라상 이야기...</p>
+                </div>
+                <div class="post-arrow">&rarr;</div>
+            </a>
 
-        <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22" target="_blank" class="post-item">
-          <div class="post-thumb" style="background-image: url('kaja.jpg');"></div>
-          <div class="post-info">
-            <span class="post-tag">중앙아시아</span>
-            <h3 class="post-title">카자흐스탄 광야를 지나는 육로 여정</h3>
-            <p class="post-desc">끝없이 펼쳐지는 지평선과 광대한 대자연을 품은 중앙아시아 육로횡단...</p>
-          </div>
-          <div class="post-arrow">&rarr;</div>
-        </a>
+            <!-- 4번 글 -->
+            <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22" target="_blank" class="post-item">
+                <div class="post-thumb" style="background-image: url('kaja.jpg');"></div>
+                <div class="post-info">
+                    <span class="post-tag">CENTRAL ASIA</span>
+                    <h3 class="post-title">카자흐스탄 광야를 지나는 육로 여정</h3>
+                    <p class="post-desc">끝없이 펼쳐지는 지평선과 광대한 대자연을 품은 중앙아시아 육로횡단...</p>
+                </div>
+                <div class="post-arrow">&rarr;</div>
+            </a>
 
-        <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22" target="_blank" class="post-item">
-          <div class="post-thumb" style="background-image: url('1westusa.jpg');"></div>
-          <div class="post-info">
-            <span class="post-tag">미서부</span>
-            <h3 class="post-title">미서부 국립공원 로드트립 & 캠핑</h3>
-            <p class="post-desc">그랜드 캐니언부터 붉은 바위 산맥까지, 텐트 속에서 올려다본 밤하늘...</p>
-          </div>
-          <div class="post-arrow">&rarr;</div>
-        </a>
+            <!-- 5번 글 -->
+            <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22" target="_blank" class="post-item">
+                <div class="post-thumb" style="background-image: url('1westusa.jpg');"></div>
+                <div class="post-info">
+                    <span class="post-tag">USA WEST</span>
+                    <h3 class="post-title">미서부 국립공원 로드트립 & 캠핑</h3>
+                    <p class="post-desc">그랜드 캐니언부터 붉은 바위 산맥까지, 텐트 속에서 올려다본 밤하늘...</p>
+                </div>
+                <div class="post-arrow">&rarr;</div>
+            </a>
 
-        <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22" target="_blank" class="post-item">
-          <div class="post-thumb" style="background-image: url('hero1122.jpg');"></div>
-          <div class="post-info">
-            <span class="post-tag">일본</span>
-            <h3 class="post-title">후쿠오카·간사이 소도시 골목 탐방기</h3>
-            <p class="post-desc">화려한 도시 너머 고즈넉한 일본 소도시의 분위기와 맛집 이야기...</p>
-          </div>
-          <div class="post-arrow">&rarr;</div>
-        </a>
-      </div>
+            <!-- 6번 글 -->
+            <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22" target="_blank" class="post-item">
+                <div class="post-thumb" style="background-image: url('hero1122.jpg');"></div>
+                <div class="post-info">
+                    <span class="post-tag">JAPAN</span>
+                    <h3 class="post-title">후쿠오카·간사이 소도시 골목 탐방기</h3>
+                    <p class="post-desc">화려한 도시 너머 고즈넉한 일본 소도시의 분위기와 맛집 이야기...</p>
+                </div>
+                <div class="post-arrow">&rarr;</div>
+            </a>
+        </div>
 
-      <div style="text-align: center; margin-top: 40px;">
-        <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22&parentCategoryNo=22" target="_blank" class="btn-more">
-          블로그에서 전체글 보기 &rarr;
-        </a>
-      </div>
-    </div>
-  </main>
+        <div class="btn-wrapper">
+            <a href="https://blog.naver.com/PostList.naver?blogId=hampinim&from=postList&categoryNo=22&parentCategoryNo=22" target="_blank" class="btn-more">VIEW ALL POSTS</a>
+        </div>
+    </main>
 
-  <!-- global_travel-old.html 원본 푸터 -->
-  <footer>
-    <p>&copy; HAMPI. All rights reserved.</p>
-  </footer>
+    <!-- global_travel-old.html 원본 푸터 -->
+    <footer>
+        <p>&copy; HAMPI. ALL RIGHTS RESERVED.</p>
+    </footer>
 
 </body>
 </html>
