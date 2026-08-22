@@ -144,7 +144,7 @@
     .post-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      gap: 16px; /* 기존 10px에서 16px로 넓힘 */
       margin-bottom: 18px;
     }
 
@@ -154,7 +154,7 @@
       -webkit-backdrop-filter: blur(6px);
       border: 1px solid rgba(28, 61, 50, 0.13);
       border-radius: 8px;
-      padding: 13px 15px;
+      padding: 18px 18px; /* 기존 13px 15px에서 18px 18px로 확대 */
       text-decoration: none;
       display: block;
       transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
@@ -167,7 +167,7 @@
     .post-card:active { transform: translateY(-1px); }
 
     .post-card-category {
-      font-size: 10px;
+      font-size: 13px; /* 소카테고리 크기 확대 (10px -> 13px) */
       font-weight: 700;
       letter-spacing: 0.9px;
       text-transform: uppercase;
@@ -176,7 +176,7 @@
     }
 
     .post-card-title {
-      font-size: 13px;
+      font-size: 16px; /* 글 제목 크기 확대 (13px -> 16px) */
       color: var(--theme-green);
       font-weight: 600;
       line-height: 1.55;
