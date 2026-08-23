@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>팔도유람 | 함피 민병규</title>
+  <meta name="description" content="함피 민병규의 국내 여행기, 제주, 부산, 강원도, 전국 각지 팔도유람 기록입니다.">
+  <link rel="icon" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Pretendard:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #03c75a;
+      --bg-color: #f4f6f8;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-sub: #64748b;
+      --nav-bg: #1e293b;
+      --nav-hover: #334155;
+      --accent-color: #38bdf8;
+      --theme-green: #1c3d32;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* 1. 상단 로고 헤더 */
+    header {
+      background: #ffffff;
+      padding: 15px 24px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .main-logo { height: 130px; width: auto; object-fit: contain; }
+    .stamp-logo { height: 110px; width: auto; object-fit: contain; }
+
+    /* 2. 네비게이션 메인 바 */
+    nav {
+      background-color: var(--nav-bg);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .nav-container { max-width: 1200px; margin: 0 auto; }
+    .main-menu { display: flex; list-style: none; flex-wrap: wrap; }
+    .main-menu > li { position: relative; }
+    .main-menu > li > a {
+      display: block;
+      padding: 16px 20px;
+      color: #f8fafc;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background 0.3s, color 0.3s;
+    }
+    .main-menu > li:hover > a,
+    .main-menu > li.active > a {
+      background-color: var(--nav-hover);
+      color: var(--accent-color);
+    }
+
+    /* 3. 팔도유람 전용 오버레이 히어로 영역 */
+    .travel-hero-container {
+      position: relative;
+      width: 100%;
+      min-height: calc(100vh - 200px);
+      /* 국내 분위기 배경 사진 지정 */
+      background: url('https://images.unsplash.com/photo-1548115184-bc6544d06a58?auto=format&fit=crop&w=2000&q=85') center center / cover no-repeat;
+      display: flex;
+      align-items: center;
+    }
+    .travel-hero-container::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.82) 48%, rgba(255,255,255,0.08) 82%);
+      z-index: 1;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+    .hero-content-box { max-width: 900px; }
+
+    .main-title {
+      font-family: 'Pretendard', -apple-system, sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--theme-green);
+      letter-spacing: -1px;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+    .sub-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #2c4c3e;
+      letter-spacing: 0.5px;
+      margin-bottom: 22px;
+    }
+    .btn-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      background-color: var(--theme-green);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: background-color 0.25s, transform 0.2s;
+      box-shadow: 0 4px 12px rgba(28, 61, 50, 0.2);
+    }
+    .btn-more:hover {
+      background-color: #122821;
+      transform: translateY(-2px);
+    }
+    .keywords-list {
+      margin-top: 22px;
+      font-size: 15px;
+      color: #4a5568;
+      font-weight: 500;
+    }
+
+    /* ===== 글 카드 그리드 ===== */
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .post-card {
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(28, 61, 50, 0.13);
+      border-radius: 8px;
+      padding: 16px 20px;
+      text-decoration: none;
+      display: block;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .post-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(28, 61, 50, 0.15);
+      background: rgba(255, 255, 255, 0.96);
+    }
+    .post-card-category {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      color: #03a24a;
+      margin-bottom: 6px;
+    }
+    .post-card-title {
+      font-size: 18px;
+      color: var(--theme-green);
+      font-weight: 600;
+      line-height: 1.55;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .post-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 9px;
+    }
+    .post-card-arrow {
+      font-size: 11px;
+      color: #94a3b8;
+      transition: color 0.2s;
+    }
+    .post-card:hover .post-card-arrow { color: var(--theme-green); }
+
+    /* 스켈레톤 로딩 */
+    .skeleton-card {
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(28,61,50,0.08);
+      border-radius: 8px;
+      padding: 13px 15px;
+    }
+    .skeleton-bar {
+      background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+      background-size: 200% 100%;
+      border-radius: 4px;
+      animation: shimmer 1.6s ease-in-out infinite;
+    }
+    .skeleton-bar.sm { height: 9px; width: 38%; margin-bottom: 9px; }
+    .skeleton-bar.lg { height: 11px; width: 90%; margin-bottom: 5px; }
+    .skeleton-bar.md { height: 11px; width: 66%; }
+    @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+    /* 4. 푸터 */
+    footer {
+      background-color: #0f172a;
+      color: #94a3b8;
+      padding: 35px 20px;
+      margin-top: auto;
+    }
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* 반응형 */
+    @media (max-width: 768px) {
+      .travel-hero-container::before {
+        background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.88) 65%, rgba(255,255,255,0.3) 100%);
+      }
+      .main-title { font-size: 40px; }
+      .sub-title { font-size: 16px; letter-spacing: 4px; margin-bottom: 18px; }
+    }
+    @media (max-width: 480px) {
+      .post-grid { grid-template-columns: 1fr; }
+      .hero-content-box { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 상단 로고 헤더 -->
+  <header>
+    <div class="header-container">
+      <a href="index.html"><img src="logo1.png" alt="메인 로고" class="main-logo"></a>
+      <a href="index.html"><img src="dojang11.png" alt="도장 로고" class="stamp-logo"></a>
+    </div>
+  </header>
+
+  <!-- 상단 네비게이션 메뉴 -->
+  <nav>
+    <div class="nav-container">
+      <ul class="main-menu">
+        <li><a href="global_travel.html">지구여행</a></li>
+        <li class="active"><a href="domestic.html">팔도유람</a></li>
+        <li><a href="notes.html">여행단상</a></li>
+        <li><a href="jottings.html">주절주절</a></li>
+        <li><a href="reviews.html">읽고보고</a></li>
+        <li><a href="hmangwon.html">망원동네</a></li>
+        <li><a href="talktalk.html">톡톡이야기</a></li>
+        <li><a href="indiascent.html">인도엿보기(2008)</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 팔도유람 오버레이 섹션 -->
+  <main class="travel-hero-container">
+    <div class="hero-inner">
+      <div class="hero-content-box">
+        <h1 class="main-title">팔도유람</h1>
+        <div class="sub-title">KOREA TRAVEL</div>
+
+        <!-- 블로그 글 카드 그리드 -->
+        <div class="post-grid" id="postGrid">
+          <div class="skeleton-card"><div class="skeleton-bar sm"></div><div class="skeleton-bar lg"></div><div class="skeleton-bar md"></div></div>
+          <div class="skeleton-card"><div class="skeleton-bar sm"></div><div class="skeleton-bar lg"></div><div class="skeleton-bar md"></div></div>
+          <div class="skeleton-card"><div class="skeleton-bar sm"></div><div class="skeleton-bar lg"></div><div class="skeleton-bar md"></div></div>
+          <div class="skeleton-card"><div class="skeleton-bar sm"></div><div class="skeleton-bar lg"></div><div class="skeleton-bar md"></div></div>
+        </div>
+
+        <!-- 컨트롤 -->
+        <div>
+          <!-- 팔도유람(국내여행) 블로그 카테고리 URL로 수정하세요 -->
+          <a href="https://blog.naver.com/PostList.naver?blogId=hampinim" target="_blank" class="btn-more">
+            전체 글 보기 &rarr;
+          </a>
+        </div>
+        <div class="keywords-list">
+          제주 · 강원 · 부산 · 남해 · 경주 · 서울 근교 외
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 하단 푸터 -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-info">
+        <p>© KoreaHostel All rights reserved.</p>
+      </div>
+      <a href="https://blog.naver.com/hampinim" target="_blank">
+        <img src="dojang11.png" alt="도장 로고" class="stamp-logo">
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    /* ================================================
+       ✏️ 국내여행(팔도유람) 글 목록 직접 입력 구역
+    ================================================ */
+    const POST_POOL = [
+      {category: '제주도', title: '제주 올레길 걷기 여행 코스 추천', url: 'https://blog.naver.com/hampinim'},
+      {category: '강원도', title: '강릉 바다 여행과 커피 거리 탐방', url: 'https://blog.naver.com/hampinim'},
+      {category: '부산', title: '부산 해운대와 광안리 야경 투어', url: 'https://blog.naver.com/hampinim'},
+      {category: '경상도', title: '경주 역사 탐방 고즈넉한 대릉원 산책', url: 'https://blog.naver.com/hampinim'},
+      {category: '전라도', title: '전주 한옥마을 먹거리 및 산책 코스', url: 'https://blog.naver.com/hampinim'},
+      {category: '서울/경기', title: '주말 서울 근교 드라이브 코스', url: 'https://blog.naver.com/hampinim'}
+    ];
+
+    function shuffle(arr) {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    function renderPosts(posts) {
+      const grid = document.getElementById('postGrid');
+      if (!posts.length) {
+        grid.innerHTML = `<div style="grid-column:1/-1;padding:24px 0;color:#94a3b8;font-size:13px">POST_POOL 배열에 글을 추가해주세요.</div>`;
+        return;
+      }
+      grid.innerHTML = posts.slice(0, 6).map(p => `
+        <a class="post-card" href="${p.url}" target="_blank" rel="noopener">
+          <div class="post-card-category">${p.category}</div>
+          <div class="post-card-title">${p.title}</div>
+          <div class="post-card-meta">
+            <span class="post-card-arrow">읽기 →</span>
+          </div>
+        </a>
+      `).join('');
+    }
+
+    renderPosts(shuffle(POST_POOL));
+  </script>
+</body>
+</html>
