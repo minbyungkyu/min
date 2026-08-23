@@ -154,52 +154,56 @@
   margin-bottom: 18px;
 }
 
-.post-card {
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(28, 61, 50, 0.13);
-  border-radius: 8px;
-  padding: 16px 20px;                             /* 패딩 및 내부 높이감 통일 */
-  text-decoration: none;
-  display: block;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-}
-    
+ .post-card {
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(28, 61, 50, 0.13);
+      border-radius: 8px;
+      padding: padding: 16px 20px; /* 좌우 패딩을 40px에서 20px로 조정하여 정돈 */
+      text-decoration: none;
+      display: block;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
     .post-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 10px 24px rgba(28, 61, 50, 0.15);
       background: rgba(255, 255, 255, 0.96);
     }
+    .post-card:active { transform: translateY(-1px); }
+
     .post-card-category {
-      font-size: 14px;
+      font-size: 14px; /* 소카테고리 크기 확대 (10px -> 14px) */
       font-weight: 700;
       letter-spacing: 0.9px;
       text-transform: uppercase;
       color: #03a24a;
       margin-bottom: 6px;
     }
+
     .post-card-title {
-      font-size: 18px;
-      color: var(--theme-green);
-      font-weight: 600;
-      line-height: 1.55;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+  font-size: 18px;
+  color: var(--theme-green);
+  font-weight: 600;
+  line-height: 1.55;
+  white-space: nowrap; /* 👈 줄바꿈 방지 */
+  overflow: hidden; /* 👈 넘치는 텍스트 숨김 */
+  text-overflow: ellipsis; /* 👈 넘치는 부분 말줄임표(...) 처리 */
+}
     .post-card-meta {
       display: flex;
       align-items: center;
       gap: 6px;
       margin-top: 9px;
     }
+
     .post-card-arrow {
       font-size: 11px;
       color: #94a3b8;
       transition: color 0.2s;
     }
     .post-card:hover .post-card-arrow { color: var(--theme-green); }
+
 
     /* 스켈레톤 로딩 */
     .skeleton-card {
