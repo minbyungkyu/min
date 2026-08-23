@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>살며 사랑하며 여행하며~ | 함피 민병규</title>
+    <meta name="naver-site-verification" content="d96d41be9508155a2a5ce7c48d3f52fed06f4e80" />
+    <meta name="naver-site-verification" content="7f96837c5e14d0c8688c9d19a2e12e915aa1c69e" />
+    <meta name="description" content="다낭, 다낭한달살기, 태국, 포르투갈, 키르기스스탄, 카자흐스탄, 방콕, 베트남, 미국 캠핑여행, 라오스, 미얀마, 중국, 윈난성, 운남성, 일본, 태국북부, 아시아 육로횡단.">
+    <meta name="keywords" content="다낭, 다낭한달살기, 태국, 포르투갈, 키르기스스탄, 카자흐스탄, 방콕, 베트남, 미국 캠핑여행, 라오스, 미얀마, 중국, 윈난성, 운남성, 일본, 태국북부, 아시아 육로횡단">
+    <meta name="author" content="함피 민병규">
+    <link rel="canonical" href="https://www.koreahostel.com/">
+    
+    <!-- 오픈 그래프 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="KoreaHostel | 살며 사랑하며 여행하며~">
+    <meta property="og:description" content="다낭, 다낭한달살기, 태국, 포르투갈, 키르기스스탄, 카자흐스탄, 방콕, 베트남, 미국 캠핑여행, 라오스, 미얀마, 중국, 윈난성, 운남성, 일본, 태국북부, 아시아 육로횡단">
+    <meta property="og:image" content="https://www.koreahostel.com/hero1122.jpg">
+    <meta property="og:url" content="https://www.koreahostel.com/">
+    
+    <!-- 트위터 카드 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="KoreaHostel | 살며 사랑하며 여행하며~">
+    <meta name="twitter:description" content="다낭, 다낭한달살기, 태국, 포르투갈, 키르기스스탄, 카자흐스탄, 방콕, 베트남, 미국 캠핑여행, 라오스, 미얀마, 중국, 윈난성, 운남성, 일본, 태국북부, 아시아 육로횡단">
+    <meta name="twitter:image" content="https://www.koreahostel.com/hero1122.jpg">
+
+    <!-- Google Font & Favicon -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.png">
+
+    <style>
+        :root {
+            --primary-color: #03c75a;
+            --bg-color: #f4f6f8;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-sub: #64748b;
+            --nav-bg: #1e293b;
+            --nav-hover: #334155;
+            --accent-color: #38bdf8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* 1. 상단 로고 헤더 */
+        header {
+            background: #ffffff;
+            padding: 15px 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .main-logo {
+            height: 130px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .stamp-logo {
+            height: 110px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* 2. 네비게이션 메인 바 */
+        nav {
+            background-color: var(--nav-bg);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .main-menu {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .main-menu > li {
+            position: relative;
+        }
+
+        .main-menu > li > a {
+            display: block;
+            padding: 16px 20px;
+            color: #f8fafc;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .main-menu > li:hover > a {
+            background-color: var(--nav-hover);
+            color: var(--accent-color);
+        }
+
+        /* 3. 메인 대문(Hero) 영역 */
+        .hero-section {
+            position: relative;
+            min-height: 550px;
+            background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25)), url('hero1122.jpg') center 10% / cover no-repeat;
+            filter: brightness(1.05) contrast(1.05);
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            padding: 60px 20px;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .hero-content {
+            width: 75%;
+            text-align: left;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8), 0 0 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            line-height: 1.8;
+            margin-bottom: 10px;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            font-weight: 300;
+            opacity: 0.95;
+            line-height: 1.8;
+            word-break: keep-all;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+        }
+
+        /* 4. 메인 컨텐츠 영역 */
+        main {
+            flex: 1;
+            max-width: 1200px;
+            width: 100%;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .destination-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+        }
+
+        .card-img-wrapper {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .destination-card:hover .card-img-wrapper img {
+            transform: scale(1.08);
+        }
+
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-sub);
+            line-height: 1.5;
+        }
+
+        /* 5. 푸터 */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            padding: 35px 20px;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-info p {
+            font-size: 14px;
+        }
+
+        /* 6. 반응형 미디어 쿼리 (모바일 대응) */
+        @media (max-width: 1024px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 15px;
+            }
+            .main-logo {
+                height: 70px;
+            }
+            .stamp-logo {
+                height: 60px;
+            }
+            .main-menu {
+                justify-content: center;
+            }
+            .main-menu > li > a {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+            .hero-section {
+                min-height: 380px;
+                padding: 30px 15px;
+            }
+            .hero-content {
+                width: 100%;
+            }
+            .hero-title {
+                font-size: 1rem;
+            }
+            .hero-subtitle {
+                font-size: 13px;
+                line-height: 1.6;
+            }
+            main {
+                margin: 25px auto;
+                padding: 0 15px;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .card-img-wrapper {
+                height: 220px;
+            }
+            .footer-container {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 상단 헤더 -->
+    <header>
+        <div class="header-container">
+            <a href="https://minbyungkyu.github.io/min" target="_blank">
+                <img src="logo1.png" alt="메인 로고" class="main-logo">
+            </a>
+            <a href="https://minbyungkyu.github.io/min" target="_blank">
+                <img src="dojang11.png" alt="도장 로고" class="stamp-logo">
+            </a>
+        </div>
+    </header>
+
+    <!-- 네비게이션 메뉴 -->
+    <nav>
+        <div class="nav-container">
+            <ul class="main-menu">
+                <li><a href="global_travel.html">지구여행</a></li>
+                <li><a href="domestic.html">팔도유람</a></li>
+                <li><a href="notes.html">여행단상</a></li>
+                <li><a href="jottings.html">주절주절</a></li>
+                <li><a href="reviews.html">읽고보고</a></li>
+                <li><a href="mangwon.html">망원동네</a></li>
+                <li><a href="https://blog.naver.com/guestbook/GuestBookList.naver?blogId=hampinim&skinType=&skinId=&from=menu" target="_blank">톡톡이야기</a></li>
+                <li><a href="indiascent.html">인도엿보기(2008)</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 메인 대문(Hero) 영역 -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <strong>여행은 언제나 거기 있다</strong><br><br>
+                <p class="hero-subtitle">
+                    일상의 소음이 잠시 멀어지고,<br>
+                    낯선 거리의 공기가 폐 속으로 스며드는 순간<br>
+                    그때 비로소 살아있음을 온전히 느낀다.<br>
+                    낯선 골목 하나, 이름 모를 카페의 커피 한 잔, 우연히 마주친 현지인의 미소<br>
+                    그 작은 순간들이 쌓여 평생 지워지지 않는 기억이 된다.<br>
+                    지금 어디론가 떠나고 싶은 마음이 든다면 그걸로 충분!<br>
+                    완벽한 준비 같은 건 없다. 그냥 떠나면 된다.<br>
+                    세상은 생각보다 훨씬 아름답고, <br>
+                    언제나 우리를 반기고 있으니까.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 메인 카테고리 본문 영역 -->
+    <main>
+        <div class="card-grid">
+            <!-- 1. 지구여행 -->
+            <a href="global_travel.html" class="destination-card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=600&q=80" alt="지구여행">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">지구여행</h3>
+                    <p class="card-desc">세계 곳곳을 발길 닿는 대로 유랑하며 써 내려간 해외 여행 이야기</p>
+                </div>
+            </a>
+
+            <!-- 2. 팔도유람 -->
+            <a href="domestic.html" class="destination-card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1548115184-bc6544d06a58?auto=format&fit=crop&w=600&q=80" alt="팔도유람">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">팔도유람</h3>
+                    <p class="card-desc">대한민국 구석구석 정겨운 풍경과 소박한 이야기들</p>
+                </div>
+            </a>
+
+            <!-- 3. 여행단상 -->
+            <a href="notes.html" class="destination-card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80" alt="여행단상">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">여행단상</h3>
+                    <p class="card-desc">길 위에서 문득 떠오른 생각과 스쳐 지나간 감정들의 기록</p>
+                </div>
+            </a>
+
+            <!-- 4. 주절주절 -->
+            <a href="jottings.html" class="destination-card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=600&q=80" alt="주절주절">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">주절주절</h3>
+                    <p class="card-desc">일상의 자잘한 일상 이야기와 진솔한 마음속 노트</p>
+                </div>
+            </a>
+
+            <!-- 5. 읽고보고 -->
+            <a href="reviews.html" class="destination-card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80" alt="읽고보고">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">읽고보고</h3>
+                    <p class="card-desc">마음을 흔든 책, 영화, 그리고 다양한 문화적 시선들</p>
+                </div>
+            </a>
+
+            <!-- 6. 망원동네 -->
+            <a href="mangwon.html" class="destination-card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80" alt="망원동네">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">망원동네</h3>
+                    <p class="card-desc">망원동 골목길의 정겨운 일상과 동네 아지트 기록</p>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <!-- 하단 푸터 -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>© KoreaHostel All rights reserved.</p>
+            </div>
+            <a href="https://blog.naver.com/hampinim" target="_blank">
+                <img src="dojang11.png" alt="도장 로고" class="stamp-logo">
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
