@@ -1,47 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <!-- 메인 페이지 -->
   <url>
-    <loc>https://KoreaHostel.com/</loc>
+    <loc>https://koreahostel.com/</loc>
     <lastmod>2026-08-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
-    <url>
-    <loc>https://minbyungkyu.github.io/min/</loc>
-    <lastmod>2026-08-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
+  <!-- 주요 서브 페이지 -->
   <url>
-    <loc>https://KoreaHostel.com/index.html</loc>
+    <loc>https://koreahostel.com/global_travel.html</loc>
     <lastmod>2026-08-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://minbyungkyu.github.io/min/index.html</loc>
-    <lastmod>2026-08-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- 모바일 메인 페이지 -->
-  <url>
-    <loc>https://KoreaHostel.com/m_index.html</loc>
-    <lastmod>2026-08-13</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-   <url>
-    <loc>https://minbyungkyu.github.io/min/m_index.html</loc>
+  <url>
+    <loc>https://koreahostel.com/domestic.html</loc>
     <lastmod>2026-08-13</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://koreahostel.com/notes.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://koreahostel.com/reviews.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://koreahostel.com/indiascent.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
-
