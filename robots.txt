@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://KoreaHostel.com/sitemap.xml
-Sitemap: https://minbyungkyu.github.io/min/sitemap.xml
+
+Sitemap: https://koreahostel.com/sitemap.xml
