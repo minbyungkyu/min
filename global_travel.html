@@ -236,25 +236,53 @@
 
     /* 반응형 */
 @media (max-width: 768px) {
-  /* 모바일 로고 크기 축소 추가 */
-  .main-logo {
-    height: 45px;
-  }
-  .stamp-logo {
-    height: 40px;
-  }
+  /* 1. 모바일 로고 크기 축소 */
+  .main-logo { height: 45px; }
+  .stamp-logo { height: 40px; }
 
+  /* 2. 기존 배경 그래디언트 유지 */
   .travel-hero-container::before {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.88) 65%, rgba(255, 255, 255, 0.3) 100%);
   }
-  .main-title { font-size: 40px; }
-  .sub-title { font-size: 16px; letter-spacing: 4px; margin-bottom: 18px; }
+
+  /* 3. 모바일 본문 영역 양옆 여백 조정 */
+  .hero-inner {
+    padding: 25px 16px; /* 좌우 여백을 줄여 전체 레이아웃 핏 조정 */
+  }
+
+  /* 4. 타이틀 크기 */
+  .main-title { font-size: 24px; }
+  .sub-title { font-size: 13px; letter-spacing: 1px; margin-bottom: 12px; }
+
+  /* 5. 카드 그리드 및 폭 축소 */
+  .post-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    max-width: 320px;   /* 모바일 카드 전체 최대 가로 폭을 320px로 제한 */
+    width: 100%;
+    margin: 0 auto 16px; /* 가운데 정렬 */
+  }
+
+  /* 6. 카드 내부 스타일 및 텍스트 '...' 말줄임 처리 */
+  .post-card {
+    padding: 10px 14px;
+    width: 100%;
+    overflow: hidden; /* 카드를 넘치는 요소 숨김 */
+  }
+
+  .post-card-title {
+    font-size: 14px;
+    white-space: nowrap;      /* 줄바꿈 없이 한 줄로 표시 */
+    overflow: hidden;         /* 카드 폭을 넘어가면 숨김 */
+    text-overflow: ellipsis;  /* 넘어가는 글자는 '...' 처리 */
+    display: block;
+    width: 100%;
+  }
 }
 
-    @media (max-width: 480px) {
-      .post-grid { grid-template-columns: 1fr; }
-      .hero-content-box { max-width: 100%; }
-    }
+@media (max-width: 480px) {
+  .hero-content-box { max-width: 100%; }
+}
   </style>
 </head>
 <body>
