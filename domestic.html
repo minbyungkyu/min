@@ -256,6 +256,16 @@ nav {
   .main-logo { height: 45px; }
   .stamp-logo { height: 40px; }
 
+/* 2. 모바일 네비게이션 메뉴 크기 조정 (index.html과 동일하게 맞춤) */
+  .main-menu {
+    justify-content: center; /* 메뉴 중앙 정렬 */
+  }
+
+  .main-menu > li > a {
+    padding: 10px 12px;     /* 모바일 화면에 맞춘 여백 축소 */
+    font-size: 13px;        /* 모바일 모드 폰트 크기 */
+  }
+  
   /* 2. 기존 배경 그래디언트 유지 */
   .travel-hero-container::before {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.88) 65%, rgba(255, 255, 255, 0.3) 100%);
