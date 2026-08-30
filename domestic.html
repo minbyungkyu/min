@@ -52,31 +52,43 @@
     .stamp-logo { height: 110px; width: auto; object-fit: contain; }
 
     /* 2. 네비게이션 메인 바 */
-    nav {
-      background-color: var(--nav-bg);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-    .nav-container { max-width: 1200px; margin: 0 auto; }
-    .main-menu { display: flex; list-style: none; flex-wrap: wrap; }
-    .main-menu > li { position: relative; }
-    .main-menu > li > a {
-      display: block;
-      padding: 16px 20px;
-      color: #f8fafc;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 15px;
-      transition: background 0.3s, color 0.3s;
-    }
-    .main-menu > li:hover > a,
-    .main-menu > li.active > a {
-      background-color: var(--nav-hover);
-      color: var(--accent-color);
-    }
+nav {
+  background-color: var(--nav-bg);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
 
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-menu {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.main-menu > li {
+  position: relative;
+}
+
+.main-menu > li > a {
+  display: block;
+  padding: 16px 20px;
+  color: #f8fafc;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.main-menu > li:hover > a {
+  background-color: var(--nav-hover);
+  color: var(--accent-color);
+}
     /* 3. 팔도유람 전용 오버레이 히어로 영역 */
     .travel-hero-container {
       position: relative;
