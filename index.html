@@ -172,13 +172,24 @@
         }
 
         .hero-subtitle {
-            font-size: 16px;
-            font-weight: 300;
-            opacity: 0.95;
-            line-height: 1.8;
-            word-break: keep-all;
-            text-shadow: 0 1px 8px rgba(0,0,0,0.5);
-        }
+  font-size: 16px;
+  font-weight: 500;  /* 글씨 굵기를 조금 굵게 조정 */
+  opacity: 1;        /* 투명도를 제거하여 또렷하게 지정 */
+  line-height: 1.8;
+  word-break: keep-all;
+  /* 강한 검은색 외곽선(Stroke) + 짙은 그림자 */
+  text-shadow: 
+    -2px -2px 0 #000, 
+     2px -2px 0 #000, 
+    -2px  2px 0 #000, 
+     2px  2px 0 #000, 
+    -2px  0px 0 #000, 
+     2px  0px 0 #000, 
+     0px -2px 0 #000, 
+     0px  2px 0 #000, 
+    0 4px 15px rgba(0, 0, 0, 0.95), 
+    0 0 25px rgba(0, 0, 0, 0.95);
+}
 
         /* 4. 메인 컨텐츠 영역 */
         main {
