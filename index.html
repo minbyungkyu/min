@@ -146,14 +146,21 @@
         .hero-content {
   width: 75%;
   text-align: left;
-  /* 그림자 중첩 및 보더 외곽선 효과(Drop-shadow/Stroke) 효과 추가 */
+  
+  /* 1. 글자 4방향 강한 외곽선(Stroke) + 2. 뒤쪽 짙은 그림자 중첩 */
   text-shadow: 
-    0 2px 10px rgba(0, 0, 0, 0.9), 
-    0 0 20px rgba(0, 0, 0, 0.9),
-    -1px -1px 0 #000,  
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000; 
+    /* 검은색 외곽선 (상하좌우 및 대각선) */
+    -2px -2px 0 #000,  
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000,
+    -2px  0px 0 #000,
+     2px  0px 0 #000,
+     0px -2px 0 #000,
+     0px  2px 0 #000,
+    /* 넓게 퍼지는 짙은 그림자 */
+    0 4px 15px rgba(0, 0, 0, 0.95),
+    0 0 25px rgba(0, 0, 0, 0.95);
 }
 
         .hero-title {
